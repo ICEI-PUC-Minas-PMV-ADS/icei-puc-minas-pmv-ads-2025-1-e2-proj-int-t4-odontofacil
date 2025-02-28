@@ -1,6 +1,6 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A migração de prontuários físicos para sistemas digitais é um grande avanço na área odontológica, proporcionando ganhos em eficiência administrativa e sustentabilidade ambiental. A digitalização reduz o uso de papel, contribuindo para a preservação de recursos naturais. Ao substituir registros em papel, o prontuário eletrônico diminui erros médicos, otimiza recursos, economiza tempo e melhora a segurança dos dados, armazenando informações em backup digital. Também facilita a análise de dados, permitindo a identificação precoce de doenças evitáveis e a promoção de hábitos saudáveis. O sistema também proporciona maior agilidade no atendimento e fortalece a segurança dos dados dos pacientes ao garantir acesso controlado e proteção contra perda por degradação física.
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
@@ -16,18 +16,14 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+O "Odonto Fácil" tem como objetivo desenvolver um sistema de prontuário eletrônico focado na área odontológica, centralizando e organizando dados de saúde dos pacientes, como informações pessoais, históricos, exames e prontuários. O sistema visa facilitar o acesso e atualização das informações por todos os profissionais de saúde, otimizando o tempo de consulta e melhorando a qualidade do atendimento odontológico.
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo. Ou, o grupo poderá consultar e justificar o impacto do problema para o público-alvo por meio de pesquisas em outras fontes. Neste caso, é essencial que todos os dados apresentados estejam acompanhados de suas fontes (conforme padrão ABNT).
+A criação do "Odonto Fácil" é necessária para modernizar a gestão dos dados odontológicos, aumentando a eficiência e segurança no atendimento. A centralização digital dos dados permite acesso remoto, reduzindo o risco de erros de medicação e duplicação de exames. A plataforma também contribui para a melhoria da coordenação e continuidade dos cuidados de saúde, garantindo que todos os profissionais envolvidos compartilhem informações de maneira segura. Além disso, o sistema oferece alertas automáticos para interações medicamentosas e lembretes de exames, promovendo um atendimento mais seguro e eficiente. A implementação do "Odonto Fácil" favorece o compartilhamento seguro de informações, respeitando a confidencialidade dos dados dos pacientes e oferecendo um atendimento de maior qualidade.
 
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
