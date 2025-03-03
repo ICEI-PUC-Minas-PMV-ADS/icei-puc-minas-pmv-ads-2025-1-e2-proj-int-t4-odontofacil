@@ -3,11 +3,14 @@
 A migração de prontuários físicos para sistemas digitais é um grande avanço na área odontológica, proporcionando ganhos em eficiência administrativa e sustentabilidade ambiental. A digitalização reduz o uso de papel, contribuindo para a preservação de recursos naturais. Ao substituir registros em papel, o prontuário eletrônico diminui erros médicos, otimiza recursos, economiza tempo e melhora a segurança dos dados, armazenando informações em backup digital. Também facilita a análise de dados, permitindo a identificação precoce de doenças evitáveis e a promoção de hábitos saudáveis. O sistema também proporciona maior agilidade no atendimento e fortalece a segurança dos dados dos pacientes ao garantir acesso controlado e proteção contra perda por degradação física.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Dentre os problemas que podem ser amenizados com este projeto estão: o alto consumo de papeis, a dificuldade de contato entre paciente e médico, o processo lento para se atualizar histórico de pacientes.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+O alto consumo de papeis: Atualmente é necessário um grande consumo de papeis para armazenar resultados de exames, históricos médicos, receitas, dados gerais do paciente etc. Com uso de um sistema online, haveria uma redução de gastos com folhas, permitindo um desenvolvimento sustentável.
+
+Dificuldade para contatos: Atualmente a única forma para se ter troca de informação entre paciente e médico, é através de chats online ou pessoalmente. O sistema permitiria uma troca facilitada com radiografias, resultados de exames, solicitação de receitas e atestados. Onde tanto o paciente quanto o médico poderiam acessar qualquer item necessário de forma hábil.
+
+Lentidão para atualizar informações: Parte das desvantagens ao se utilizar meios físicos, é a dificuldade para se armazenas dados dos clientes e atualizá-los ao decorrer de consultas. Um sistema online permite atualização imediata e rápida localização de cada paciente.
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
@@ -30,7 +33,14 @@ A criação do "Odonto Fácil" é necessária para modernizar a gestão dos dado
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+Há 3 públicos-alvo para o uso do sistema:
+
+O paciente: Terá uma conta com suas informações pessoais de cadastro, e poderá usar de certas funcionalidades, como ver seu histórico de exames. O intuito para o paciente, é que o sistema seja o mais simples e intuitivo possível, para que qualquer um consiga se localizar e entender o que fazer e como fazer.
+
+O operador: Será alguém com acesso limitado, como um recepcionista, que poderá buscar perfis de pacientes e certas informações. Assim como a possibilidade de marcar consultas. 
+
+O médico: Que terá acesso total ao sistema, permitindo adicionar, alterar e remover arquivos dos clientes, é o perfil que deverá ter mais conhecimento para o uso do sistema, mas ainda deve ser o mais simplificado possível, para se evitar confusões médicas para o paciente.
+
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
