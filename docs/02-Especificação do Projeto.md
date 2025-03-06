@@ -17,8 +17,10 @@ As personas não apenas serviram como guia para entender os comportamentos e pre
 >Pacientes
 <img src="https://github.com/user-attachments/assets/bbacd153-9e37-47f2-b80f-c5a9d414c49e" alt="Persona1"/>
 <img src="https://github.com/user-attachments/assets/fe1bc90a-d123-49a0-a0ca-13afe9d85836" alt="Persona2"/>
+
 >Operador
 <img src="https://github.com/user-attachments/assets/84f53593-e8dd-4371-b865-811274a8354d" alt="Persona3"/>
+
 >Dentista/Auxiliar de Dentista
 <img src="https://github.com/user-attachments/assets/76f8c6a8-3cbd-40d1-8c14-76a1ec11b558" alt="Persona4"/>
 <img src="https://github.com/user-attachments/assets/174f6434-1985-4077-900c-f17e1eeccdc4" alt="Persona5"/>
