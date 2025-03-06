@@ -8,24 +8,20 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
+Para garantir que nosso projeto atenda de forma satisfatória às necessidades reais dos usuários, desenvolvemos um conjunto de personas. Essas personas foram criadas com base em dados e pesquisas para refletir uma variedade de perfis e situações que nossos usuários podem enfrentar.
 
-Utilize também como referência o exemplo abaixo:
+Com base nelas, identificamos possíveis cenários e desafios que nossos usuários reais podem encontrar. Esse processo de criação e análise nos ajudou a visualizar melhor as suas necessidades e expectativas, permitindo que orientássemos o projeto de maneira mais precisa e centrada no usuário.
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
+As personas não apenas serviram como guia para entender os comportamentos e preferências dos nossos usuários, mas também foram fundamentais para direcionar as decisões de design e desenvolvimento. Ao alinhar nosso trabalho com as situações e desafios que essas personas enfrentam, conseguimos garantir que nosso projeto seja mais relevante, útil e eficaz para o público que pretendemos atingir.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> 
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+>Pacientes
+<img src="https://github.com/user-attachments/assets/bbacd153-9e37-47f2-b80f-c5a9d414c49e" alt="Persona1"/>
+<img src="https://github.com/user-attachments/assets/fe1bc90a-d123-49a0-a0ca-13afe9d85836" alt="Persona2"/>
+>Operador
+<img src="https://github.com/user-attachments/assets/84f53593-e8dd-4371-b865-811274a8354d" alt="Persona3"/>
+>Dentista/Auxiliar de Dentista
+<img src="https://github.com/user-attachments/assets/76f8c6a8-3cbd-40d1-8c14-76a1ec11b558" alt="Persona4"/>
+<img src="https://github.com/user-attachments/assets/174f6434-1985-4077-900c-f17e1eeccdc4" alt="Persona5"/>
 
 ## Histórias de Usuários
 
