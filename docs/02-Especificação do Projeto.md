@@ -29,19 +29,20 @@ As personas não apenas serviram como guia para entender os comportamentos e pre
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|EU COMO... | QUERO/PRECISO ...  |PARA ...                |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana Clara  | Uma forma de identificar se uma agência é realmente confiável           | Me sentir mais segura ao contratar seus serviços               |
-|Ana Clara       | Ter um mecanismo eficiente e rápido de comunicação                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Marcos| Marcar ou cancelar horários para consultas pelo site           | Buscando organizar a rotina               |
+|Lucas| Ter um FAQ ou canal de dúvidas                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
+|Lucas| Fazer um agendamento para avaliação pelo site           | Evitar filas de espera ao telefone ou conversas em chats               |
+|Rafaela| Realizar cadastro de pacientes                 | Acessar seus cadastros de qualquer computador com acesso à internet |
+|Rafaela| Quadro de horários atualizado           | Identificar possíveis realocações de horários               |
+|Rafaela| Informativo de valores de procedimentos                 | Tirar dúvidas de pacientes |
+|Rafaela| Automatização de envio de lembretes para equipe/pacientes | Evitar a falha em atendimentos por falta de material ou exames  |
+|Daniela  | Prontuário digital interativo                 | Adicionar informações sobre o paciente |
+|Daniela  | Solicitar e receber resultados de exames | Garantir que o paciente receberá orientações para fazer os exames e por vezes prever próximas etapas do tratamento               |
+|Daniela    | Organização cronológica dos procedimentos do paciente                 | Observar evolução do tratamento  |
+|Leandro | Avaliar histórico do paciente           | Identificar o que pode ser feito para prepará-lo para a consulta               |
+|Leandro | Preencher etapas realizadas                | Criar um histórico de cada atendimento |
 
 ## Requisitos
 
