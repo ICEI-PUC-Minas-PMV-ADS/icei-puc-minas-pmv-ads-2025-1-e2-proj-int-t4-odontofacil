@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# Odonto Fácil
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Interativa`
 
-`SEMESTRE`
+`Turma 04 - 2025/1 (2º Eixo)`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O "Odonto Fácil" tem como objetivo desenvolver um sistema de prontuário eletrônico focado na área odontológica, centralizando e organizando dados de saúde dos pacientes, como informações pessoais, históricos, exames e prontuários. O sistema visa facilitar o acesso e atualização das informações por todos os profissionais de saúde, otimizando o tempo de consulta e melhorando a qualidade do atendimento odontológico. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Cibele de Almeida Lira
+* Jean Karlo Firmino Coelho
+* Lucas Mamédio Vieira
+* Rodrigo Ferreira Rodrigues
+* Sérgio Arthur Marques de Souza
+* Heitor
 
 ## Orientador
 
-* Nome completo do professor 1
+* Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
