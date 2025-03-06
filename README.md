@@ -15,7 +15,7 @@ O "Odonto Fácil" tem como objetivo desenvolver um sistema de prontuário eletr�
 * Lucas Mamédio Vieira
 * Rodrigo Ferreira Rodrigues
 * Sérgio Arthur Marques de Souza
-* Heitor
+* Heitor Flavio Silva Oliveira
 
 ## Orientador
 
