@@ -37,9 +37,9 @@ Há 3 públicos-alvo para o uso do sistema:
 
 O paciente: Terá uma conta com suas informações pessoais de cadastro, e poderá usar de certas funcionalidades, como ver seu histórico de exames. O intuito para o paciente, é que o sistema seja o mais simples e intuitivo possível, para que qualquer um consiga se localizar e entender o que fazer e como fazer.
 
-O operador: Será alguém com acesso limitado, como um recepcionista, que poderá buscar perfis de pacientes e certas informações. Assim como a possibilidade de marcar consultas. 
+O operador: Será alguém com acesso limitado, como uma recepcionista/ secretária, que poderá buscar perfis de pacientes e certas informações. Assim como a possibilidade de marcar consultas. 
 
-O médico: Que terá acesso total ao sistema, permitindo adicionar, alterar e remover arquivos dos clientes, é o perfil que deverá ter mais conhecimento para o uso do sistema, mas ainda deve ser o mais simplificado possível, para se evitar confusões médicas para o paciente.
+O médico/ auxiliar: Que terá acesso total ao sistema, permitindo adicionar, alterar e remover arquivos dos clientes, é o perfil que deverá ter mais conhecimento para o uso do sistema, mas ainda deve ser o mais simplificado possível, para se evitar confusões médicas para o paciente.
 
 
 > **Links Úteis**:
