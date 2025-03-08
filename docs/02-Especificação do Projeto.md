@@ -8,42 +8,41 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
+Para garantir que nosso projeto atenda de forma satisfatória às necessidades reais dos usuários, desenvolvemos um conjunto de personas. Essas personas foram criadas com base em dados e pesquisas para refletir uma variedade de perfis e situações que nossos usuários podem enfrentar.
 
-Utilize também como referência o exemplo abaixo:
+Com base nelas, identificamos possíveis cenários e desafios que nossos usuários reais podem encontrar. Esse processo de criação e análise nos ajudou a visualizar melhor as suas necessidades e expectativas, permitindo que orientássemos o projeto de maneira mais precisa e centrada no usuário.
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
+As personas não apenas serviram como guia para entender os comportamentos e preferências dos nossos usuários, mas também foram fundamentais para direcionar as decisões de design e desenvolvimento. Ao alinhar nosso trabalho com as situações e desafios que essas personas enfrentam, conseguimos garantir que nosso projeto seja mais relevante, útil e eficaz para o público que pretendemos atingir.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+>Pacientes
+<img src="https://github.com/user-attachments/assets/bbacd153-9e37-47f2-b80f-c5a9d414c49e" alt="Persona1"/>
+<img src="https://github.com/user-attachments/assets/fe1bc90a-d123-49a0-a0ca-13afe9d85836" alt="Persona2"/>
 
-> **Links Úteis**:
-> 
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+>Operador
+<img src="https://github.com/user-attachments/assets/84f53593-e8dd-4371-b865-811274a8354d" alt="Persona3"/>
+
+>Dentista/Auxiliar de Dentista
+<img src="https://github.com/user-attachments/assets/76f8c6a8-3cbd-40d1-8c14-76a1ec11b558" alt="Persona4"/>
+<img src="https://github.com/user-attachments/assets/174f6434-1985-4077-900c-f17e1eeccdc4" alt="Persona5"/>
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|EU COMO... | QUERO/PRECISO ...  |PARA ...                |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana Clara  | Uma forma de identificar se uma agência é realmente confiável           | Me sentir mais segura ao contratar seus serviços               |
-|Ana Clara       | Ter um mecanismo eficiente e rápido de comunicação                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Marcos| Marcar ou cancelar horários para consultas pelo site           | Buscando organizar a rotina               |
+|Lucas| Ter um FAQ ou canal de dúvidas                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
+|Lucas| Fazer um agendamento para avaliação pelo site           | Evitar filas de espera ao telefone ou conversas em chats               |
+|Rafaela| Realizar cadastro de pacientes                 | Acessar seus cadastros de qualquer computador com acesso à internet |
+|Rafaela| Quadro de horários atualizado           | Identificar possíveis realocações de horários               |
+|Rafaela| Informativo de valores de procedimentos                 | Tirar dúvidas de pacientes |
+|Rafaela| Automatização de envio de lembretes para equipe/pacientes | Evitar a falha em atendimentos por falta de material ou exames  |
+|Daniela  | Prontuário digital interativo                 | Adicionar informações sobre o paciente |
+|Daniela  | Solicitar e receber resultados de exames | Garantir que o paciente receberá orientações para fazer os exames e por vezes prever próximas etapas do tratamento               |
+|Daniela    | Organização cronológica dos procedimentos do paciente                 | Observar evolução do tratamento  |
+|Leandro | Avaliar histórico do paciente           | Identificar o que pode ser feito para prepará-lo para a consulta               |
+|Leandro | Preencher etapas realizadas                | Criar um histórico de cada atendimento |
 
 ## Requisitos
 
