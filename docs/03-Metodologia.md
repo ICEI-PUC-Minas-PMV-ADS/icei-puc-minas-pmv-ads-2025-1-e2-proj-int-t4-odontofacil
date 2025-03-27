@@ -39,6 +39,8 @@ O gerenciamento das tarefas do projeto será realizado utilizando o GitHub Proje
 
 •	Done: Após a conclusão de uma tarefa, passando por todos os testes e revisões necessários, ela é movida para "Done", indicando que está pronta para ser entregue.
 
+![image](https://github.com/user-attachments/assets/7c1f45ef-0aed-40c1-b285-762a236e7d49)
+
 ## Controle de Versão
 
 A ferramenta de controle de versão adotada no projeto foi o
