@@ -1,9 +1,43 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+Nesta seção, apresentamos a estrutura da equipe responsável pela execução das atividades do projeto, as ferramentas empregadas no desenvolvimento e na gestão do código, e as práticas adotadas para assegurar a eficiência e a qualidade do processo de desenvolvimento.
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+## Gestão do Projeto
+
+O desenvolvimento deste projeto segue a metodologia ágil Scrum, escolhida por sua flexibilidade e capacidade de adaptação a ambientes complexos. Além disso, o Scrum favorece a colaboração, a entrega contínua e a melhoria contínua. Conforme apontado por Amaral, Fleury e Isoni (2019, p. 68), os benefícios do Scrum incluem:
+
+•	Objetivos Claros: A cada Sprint, a equipe tem uma visão precisa do que precisa ser realizado, o que facilita o foco e a entrega de funcionalidades valiosas em cada ciclo.
+
+•	Definição de Papéis: Cada integrante da equipe possui um papel bem estabelecido — desde o responsável por definir o que será feito (Product Owner) até aquele que facilita as atividades da equipe (Scrum Master).
+
+•	Colaboração: O Scrum estimula um ambiente de trabalho colaborativo, onde todos os membros contribuem para o sucesso do projeto. Isso garante que as ideias sejam compartilhadas, as decisões tomadas em conjunto e o aprendizado ocorra de forma contínua.
+
+•	Transparência: Todos os membros da equipe têm visibilidade do que está sendo realizado, o que ainda precisa ser feito e quais são os problemas em potencial. Isso facilita o acompanhamento do progresso e permite a resolução de problemas antes que se tornem maiores.
+
+## Gerenciamento de Projeto
+
+No contexto deste projeto, a equipe seguiu a definição clássica dos papéis do Scrum, com as seguintes responsabilidades:
+
+•	Scrum Master:
+
+•	Product Owner: 
+
+•	Equipe de Desenvolvimento: 
+
+•	Equipe de Design:
+
+## Processo
+
+O gerenciamento das tarefas do projeto será realizado utilizando o GitHub Projects, uma ferramenta que facilita o monitoramento do progresso das atividades. As tarefas percorrem diferentes fases à medida que a equipe avança no desenvolvimento. O fluxo de trabalho segue a seguinte estrutura:
+
+•	Backlog: Todas as tarefas previstas para o projeto são inicialmente registradas aqui. Este é o local onde ficam armazenadas as funcionalidades e melhorias que ainda não foram priorizadas para o próximo Sprint.
+
+•	To Do: Durante o planejamento de cada Sprint, as tarefas selecionadas do backlog são movidas para esta coluna, representando as atividades que precisam ser realizadas no Sprint atual.
+
+•	Doing: Quando uma tarefa é iniciada por um membro da equipe, ela é movida para esta coluna, permitindo que todos saibam que a atividade está em andamento.
+
+•	Done: Após a conclusão de uma tarefa, passando por todos os testes e revisões necessários, ela é movida para "Done", indicando que está pronta para ser entregue.
 
 ## Controle de Versão
 
@@ -35,28 +69,7 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 > - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 > - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
 
-## Gerenciamento de Projeto
-
-### Divisão de Papéis
-
-Apresente a divisão de papéis entre os membros do grupo.
-
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
-### Processo
-
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
-
-### Ferramentas
+## Ferramentas
 
 As ferramentas empregadas no projeto são:
 
