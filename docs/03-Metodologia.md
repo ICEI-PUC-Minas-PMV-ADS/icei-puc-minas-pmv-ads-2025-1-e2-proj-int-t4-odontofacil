@@ -43,24 +43,13 @@ O gerenciamento das tarefas do projeto será realizado utilizando o GitHub Proje
 
 ## Controle de Versão
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório.
+O grupo usa um quadro Kanban para acompanhar o trabalho realizado e o progresso das tarefas. Essas tarefas são categorizadas de acordo com o conteúdo a ser feito.
 
-O projeto segue a seguinte convenção para o nome de branches:
-
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
-
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
-
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+- `Bug`: Correção de erros.
+- `Feature`: Implementação de novas funcionalidades.
+- `Enhancement`: Melhorias em funcionalidades existentes.
+- `Documentation`: Atualização e criação de documentação técnica.
+- `Testing`: Atividades de teste automatizado e validação de funcionalidades.
 
 Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
 
@@ -73,20 +62,25 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 
 ## Ferramentas
 
-As ferramentas empregadas no projeto são:
+O grupo utiliza de diversas ferramentas para facilitar a comunicação, o gerenciamento do projeto e a manutenção do código. A seguinte tabela detalha as principais ferramentas empregadas:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
+| AMBIENTE                    | PLATAFORMA      | LINK DE ACESSO                                                                                       |
+| --------------------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
+| Repositório de código fonte | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/icei-puc-minas-pmv-ads-2025-1-e2-proj-int-t4-odontofacil   |
+| Documentos do projeto       | GitHub          | [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-2-e1-proj-web-t11-hermes/tree/main/documentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/icei-puc-minas-pmv-ads-2025-1-e2-proj-int-t4-odontofacil/tree/main/docs) |
+| Diagrama de fluxo           | Draw.io         | https://drive.google.com/file/d/1QDp9ZdBdysQ0HRJvc2B3DeR5maelbIFc/view                               |
+| Gerenciamento do Projeto    | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1715                                         |
+| Comunicação                 | Discord / Teams |                                                                                                      |
 
 Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
  
 > **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
 > - [Slack](https://slack.com/)
 > - [Github](https://github.com/)
+
+### Estratégia de Organização de Codificação
+
+Todos os artefatos relacionados a implementação e visualização dos conteúdos do projeto do site deverão ser inseridos na pasta codigo-fonte.
+
