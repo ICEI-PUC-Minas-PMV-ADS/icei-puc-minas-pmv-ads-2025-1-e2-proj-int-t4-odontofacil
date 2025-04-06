@@ -51,15 +51,6 @@ O grupo usa um quadro Kanban para acompanhar o trabalho realizado e o progresso 
 - `Documentation`: Atualização e criação de documentação técnica.
 - `Testing`: Atividades de teste automatizado e validação de funcionalidades.
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
-
 ## Ferramentas
 
 O grupo utiliza de diversas ferramentas para facilitar a comunicação, o gerenciamento do projeto e a manutenção do código. A seguinte tabela detalha as principais ferramentas empregadas:
@@ -70,15 +61,12 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | --------------------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
 | Repositório de código fonte | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/icei-puc-minas-pmv-ads-2025-1-e2-proj-int-t4-odontofacil   |
 | Documentos do projeto       | GitHub          | [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-2-e1-proj-web-t11-hermes/tree/main/documentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/icei-puc-minas-pmv-ads-2025-1-e2-proj-int-t4-odontofacil/tree/main/docs) |
-| Diagrama de fluxo           | Draw.io         | https://drive.google.com/file/d/1QDp9ZdBdysQ0HRJvc2B3DeR5maelbIFc/view                               |
+| Diagrama de fluxo de telas  | Draw.io         | https://drive.google.com/file/d/1QDp9ZdBdysQ0HRJvc2B3DeR5maelbIFc/view?usp=sharing                   |
+| Wireframe                   | Figma           | https://www.figma.com/proto/dVwvQRUkSRmNHQaxv5EOPn/Odonto-Facil-Front-End?node-id=1-2&p=f&t=TVN5rnuh32xxQrMl-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1 |
 | Gerenciamento do Projeto    | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1715                                         |
 | Comunicação                 | Discord / Teams |                                                                                                      |
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+
 
 ### Estratégia de Organização de Codificação
 
