@@ -35,37 +35,173 @@ Os cenários representam tarefas reais que os usuários executam no sistema. Nes
 - Tarefa: A ação que o usuário deve realizar.
 - Critério de sucesso: Como determinar se a tarefa foi concluída corretamente.
 
-**Exemplo: Cenário 1**
+<table border="1">
+  <thead>
+    <tr>
+      <th>CENÁRIOS</th>
+      <th>OBJETIVO</th>
+      <th>CONTEXTO</th>
+      <th>TAREFA</th>
+      <th>CRITÉRIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Um paciente deseja utilizar um serviço da plataforma</td>
+      <td>Agendar Consultas e Exames</td>
+      <td>O usuário deseja marcar seus exames e suas consultas por meio do prontuário eletrônico</td>
+      <td>
+        1- Acessar o Odonto Fácil.<br>
+        2- Criar ou informar cadastro<br>
+        3- Ir para Informações do Paciente<br>
+        4- Agendar Consultas e Exames
+      </td>
+      <td>Consultar, sem ajuda externa</td>
+    </tr>
+    <tr>
+      <td>Um paciente deseja consultar suas futuras consultas e exames na plataforma</td>
+      <td>Consultar Agendamentos</td>
+      <td>O usuário quer visualizar os horários e datas das consultas e exames agendados</td>
+      <td>
+        1- Acessar o Odonto Fácil.<br>
+        2- Criar ou informar cadastro<br>
+        3- Ir para Informações do Paciente<br>
+        4- Agendamentos
+      </td>
+      <td>Visualizar a informação correta</td>
+    </tr>
+    <tr>
+      <td>Um paciente deseja consultar o histórico das suas consultas e exames já feitos</td>
+      <td>Histórico de Consultas e Exames</td>
+      <td>O usuário precisa consultar os atendimentos e exames já realizados</td>
+      <td>
+        1- Acessar o Odonto Fácil.<br>
+        2- Criar ou informar cadastro<br>
+        3- Ir para Informações do Paciente<br>
+        4- Histórico de Consultas e Exames
+      </td>
+      <td>Achar os registros corretos sem cometer erros</td>
+    </tr>
+    <tr>
+      <td>Um paciente precisa atualizar seus dados para que possa usar a plataforma</td>
+      <td>Atualizar Dados</td>
+      <td>O usuário deseja atualizar seu telefone e endereço no prontuário</td>
+      <td>
+        1- Acessar o Odonto Fácil.<br>
+        2- Criar ou informar cadastro<br>
+        3- Ir para Informações do Paciente<br>
+        4- Atualizar Dados
+      </td>
+      <td>Finalizar a edição e os dados ficam salvos corretamente</td>
+    </tr>
+    <tr>
+      <td>Um paciente deseja fazer o envio de um exame para análise</td>
+      <td>Usuário deseja enviar um exame</td>
+      <td>O usuário deseja se enviar um exame no prontuário eletrônico</td>
+      <td>
+        1- Acessar o Odonto Fácil.<br>
+        2- Criar ou informar cadastro<br>
+        3- Ir para Informações do Paciente<br>
+        4- Anexar exame
+      </td>
+      <td>Arquivo do exame ser anexado</td>
+    </tr>
+  </tbody>
+</table>
 
-**Objetivo:** Avaliar a facilidade e eficiência do usuário em pesquisar, adicionar um produto ao carrinho e finalizar a compra sem dificuldades.
+/## Métodos de coleta de dados
 
-**Contexto:** O usuário deseja comprar um notebook para uso pessoal. Para isso, ele deverá entrar no site www.compras.com.br para buscar opções disponíveis, comparar preços, adicionar o produto ao carrinho e finalizar a compra com pagamento via cartão de crédito.
-
-**Tarefa(s):** 
-- Acessar o site e localizar a barra de pesquisa.
-- Pesquisar por "notebook" e utilizar os filtros para refinar a busca (exemplo: marca, preço, processador).
-- Escolher um dos notebooks listados e acessar a página do produto.
-- Adicionar o produto ao carrinho.
-- Finalizar a compra, preenchendo os dados de pagamento e endereço de entrega.
-- Confirmar a transação e verificar a tela de pedido concluído.
-
-**Critério(s) de Sucesso(s):**
-- O usuário consegue encontrar e filtrar os produtos sem dificuldades.
-- O produto é adicionado ao carrinho corretamente.
-- O usuário consegue preencher as informações de pagamento e entrega sem erros.
-- A compra é finalizada com sucesso, e o usuário visualiza a confirmação do pedido.
-- Todo o processo ocorre em menos de 5 minutos, sem necessidade de assistência.
-
-## Métodos de coleta de dados
-
-Os dados coletados devem ajudar a entender a experiência dos usuários e os dados podem ser coletados por observação direta incluindo métricas quantitativas (quantidade de cliques, número de erros, tempo gasto para cada tarefa etc.), métricas qualitativas (dificuldades, comentários etc.) e questionários pós-teste (A interface foi fácil de entender? Você encontrou dificuldades em alguma etapa? O que poderia ser melhorado?)
-
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
-
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
-
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+<table border="1">
+  <thead>
+    <tr>
+      <th>Heurísticas de Nielsen</th>
+      <th>Nota dos Avaliadores</th>
+      <th>Média</th>
+      <th>Consenso</th>
+      <th>Considerações</th>
+      <th>Melhorias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visibilidade do Status do Sistema</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Correspondência entre o Sistema e o Mundo Real</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Controle de usuários e liberdade</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Prevenção de erros</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Consistência e padrões</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Reconhecimento ao invés de lembrar</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Flexibilidade e eficiência de uso</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Design estético e minimalista</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ajudar os usuários a reconhecer, diagnosticar e recuperar erros</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ajuda e documentação</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
