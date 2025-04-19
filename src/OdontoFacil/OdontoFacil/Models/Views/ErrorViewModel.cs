@@ -1,4 +1,5 @@
-namespace OdontoFacil.Models
+namespace OdontoFacil.Models.Views
+
 {
     public class ErrorViewModel
     {
