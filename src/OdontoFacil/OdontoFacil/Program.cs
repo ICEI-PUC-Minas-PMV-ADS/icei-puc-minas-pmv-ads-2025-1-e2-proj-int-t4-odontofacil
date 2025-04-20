@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<OdontoFacil.Data.OdontoFacilDbContext>(options =>
+    options.UseNpgsql(connectionString)
+    .EnableSensitiveDataLogging()
+    .UseLazyLoadingProxies()
+);
 
 var app = builder.Build();
 

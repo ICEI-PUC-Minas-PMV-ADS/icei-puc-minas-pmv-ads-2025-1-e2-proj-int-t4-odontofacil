@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OdontoFacil.Models;
+using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers
 {
