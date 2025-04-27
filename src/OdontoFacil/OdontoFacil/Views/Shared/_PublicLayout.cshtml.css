@@ -1,4 +1,4 @@
-.background-image{
+.background-image {
     position: absolute;
     inset: 0;
     background-image: linear-gradient(135deg, #7be59d5c, #bfd191a6), url(./img/background.jpeg);
