@@ -1,0 +1,51 @@
+﻿@{
+    void RenderNavBarLink(string label, string path)
+    {
+        var currentPath = Context.Request.Path;
+        var className = currentPath == path ? "nav-bar-link selected" : "nav-bar-link";
+        <a href="@path" class="@className">@label</a>
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OdontoFacil</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OdontoFacil.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top mt-3">
+        <div class="container">
+            <ul class="navbar-nav mx-auto gap-4">
+                <li class="nav-item">
+                    @{
+                        RenderNavBarLink("Cadastro", "/Cadastro");
+                    }
+                </li>
+                <li class="nav-item">
+                    @{
+                        RenderNavBarLink("Login", "/Login");
+                    }
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="background-image"></div>
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-inputmask/dist/jquery.inputmask.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
