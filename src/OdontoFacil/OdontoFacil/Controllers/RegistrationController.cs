@@ -43,9 +43,10 @@ public partial class RegistrationController : Controller
         return Redirect("/Login");
     }
 
-    private bool UserExists(string? cpf, string? email)
+    private bool UserExists(string cpf, string email)
     {
-        return _context.Users.Any(e => e.CPF == cpf || e.Email == email);
+        var cleanCpf = NumberOnly().Replace(cpf, "");
+        return _context.Users.Any(e => e.CPF == cleanCpf || e.Email == email);
     }
 
     private static User MapViewToUserModel(RegistrationViewModel formData)
