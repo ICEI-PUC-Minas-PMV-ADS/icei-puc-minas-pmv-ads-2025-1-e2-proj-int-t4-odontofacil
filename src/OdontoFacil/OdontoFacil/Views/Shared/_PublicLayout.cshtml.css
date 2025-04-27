@@ -6,6 +6,36 @@
     z-index: -1;
 }
 
+.nav-bar {
+    background-color: transparent;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    margin-inline: auto;
+    backdrop-filter: blur(5px);
+
+    animation-name: toGreenBackground;
+    animation-duration: 1ms; /* Firefox requires this to apply the animation */
+    animation-direction: alternate;
+    animation-timeline: scroll(block nearest);
+}
+
+@keyframes toGreenBackground {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #9bbda49f;
+    }
+}
+
+@supports not (animation-timeline: scroll(block nearest)) {
+    .nav-bar {
+        background-color: #9bbda4;
+    }
+}
+
 .nav-bar-link {
     font-size: 20px;
     color: white;
