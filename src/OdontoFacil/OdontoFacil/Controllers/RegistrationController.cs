@@ -38,7 +38,9 @@ public partial class RegistrationController : Controller
             return View(formData);
         }
 
-        _context.Add(MapViewToUserModel(formData));
+        var userId = Guid.NewGuid().ToString();
+        await _context.AddAsync(MapViewToUserModel(userId, formData));
+        await _context.AddAsync(new Patient { Id = userId });
         await _context.SaveChangesAsync();
         return Redirect("/Login");
     }
@@ -49,11 +51,11 @@ public partial class RegistrationController : Controller
         return _context.Users.Any(e => e.CPF == cleanCpf || e.Email == email);
     }
 
-    private static User MapViewToUserModel(RegistrationViewModel formData)
+    private static User MapViewToUserModel(string id, RegistrationViewModel formData)
     {
         return new User
         {
-            Id = Guid.NewGuid().ToString(),
+            Id = id,
             Name = formData.Name.Trim(),
             Email = formData.Email.Trim().ToLower(),
             CPF = NumberOnly().Replace(formData.CPF, ""),

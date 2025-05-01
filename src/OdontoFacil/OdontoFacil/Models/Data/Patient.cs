@@ -11,26 +11,26 @@ public partial class Patient
 
     [ForeignKey(nameof(HealthPlan))]
     [Column("id_convenio")]
-    public string PlanId { get; set; } = null!;
+    public string? PlanId { get; set; } = null!;
 
     [Column("data_nascimento")]
-    public DateOnly DateOfBirth { get; set; }
+    public DateOnly? DateOfBirth { get; set; }
 
     [Column("telefone")]
-    public string PhoneNumber { get; set; } = null!;
+    public string? PhoneNumber { get; set; } = null!;
 
     [ForeignKey(nameof(Address))]
     [Column("id_endereco")]
-    public string AddressId { get; set; } = null!;
+    public string? AddressId { get; set; } = null!;
 
     [Column("sexo")]
-    public string Sex { get; set; } = null!;
+    public string? Sex { get; set; } = null!;
 
     public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
-    public virtual HealthPlan HealthPlan { get; set; } = null!;
+    public virtual HealthPlan? HealthPlan { get; set; } = null!;
 
-    public virtual Address Address { get; set; } = null!;
+    public virtual Address? Address { get; set; } = null!;
 
     public virtual User User { get; set; } = null!;
 

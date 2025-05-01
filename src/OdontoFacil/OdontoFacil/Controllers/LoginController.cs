@@ -6,6 +6,7 @@ using OdontoFacil.Models.Data;
 using OdontoFacil.Models.Views;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using OdontoFacil.Constants;
+using Microsoft.EntityFrameworkCore;
 
 namespace OdontoFacil.Controllers;
 
@@ -33,7 +34,7 @@ public class LoginController : Controller
             return View(formData);
         }
 
-        var user = GetUser(formData.Email.Trim());
+        var user = await GetUser(formData.Email.Trim());
 
         if (user == null || !BCrypt.Net.BCrypt.Verify(formData.Password, user.Password))
         {
@@ -49,9 +50,9 @@ public class LoginController : Controller
 
     }
 
-    private User? GetUser(string email)
+    private async Task<User?> GetUser(string email)
     {
-        var user = _context.Users.FirstOrDefault(u => u.Email == email);
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         return user;
     }
 
