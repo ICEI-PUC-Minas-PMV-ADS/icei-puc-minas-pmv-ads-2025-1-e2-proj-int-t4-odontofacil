@@ -1,0 +1,75 @@
+@model OdontoFacil.Models.Views.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+
+<div class="row justify-content-center form-container">
+    <div class="col-2 d-none d-sm-block">
+        <img src="~/img/profile-pic-placeholder.svg" style="border-radius: 50%;" alt="">
+        <div class="patient-name">@Model.Name</div>
+    </div>
+    <div class="col-12 col-sm-6 offset-sm-1">
+        <h1 class="title">Perfil</h1>
+        <div class="text-secondary">Configuração da conta</div>
+
+        <form id="edit-user" class="mt-5">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control mt-2" placeholder="Digite seu nome completo" disabled />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control mt-2" placeholder="Digite seu CPF" disabled />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control mt-2" id="phone" placeholder="Digite seu celular" />
+                <span asp-validation-for="Phone" class="mt-2 text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+
+                <input asp-for="DateOfBirth" class="form-control mt-2" type="date"
+                    readonly="@(Model.DateOfBirth != null)" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="DateOfBirth" class="mt-2 text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control mt-2" placeholder="Digite seu email" />
+                <span asp-validation-for="Email" class="mt-2 text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control mt-2" type="password" placeholder="************"
+                    autocomplete="off" />
+                <span asp-validation-for="Password" class="mt-2 text-danger"></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 col-sm-3 d-flex flex-column justify-content-end align-items-sm-center">
+        <input type="submit" value="Salvar alterações" class="submit-button " form="edit-user" formmethod="post" />
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $("#phone").inputmask('(99) 99999-9999');
+            $("#CPF").inputmask('999.999.999-99');
+        });
+    </script>
+}
