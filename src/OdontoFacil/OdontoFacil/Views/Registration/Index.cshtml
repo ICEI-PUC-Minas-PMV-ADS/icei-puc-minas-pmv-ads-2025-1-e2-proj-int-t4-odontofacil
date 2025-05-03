@@ -1,0 +1,73 @@
+@model OdontoFacil.Models.Views.RegistrationViewModel
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<div class="user-registration-page">
+    <div class="logo-wrapper">
+        <img src="~/img/logo.png" width="100%">
+    </div>
+
+    <div class="row justify-content-center form-container">
+        <div class="col-md-5">
+            <form>
+                <div asp-validation-summary="ModelOnly"></div>
+
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
+                {
+                    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label text-white"></label>
+                    <input asp-for="Name" class="form-control mt-1" placeholder="Digite seu nome completo" />
+                    <span asp-validation-for="Name" class="text-white mt-1"></span>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label asp-for="Email" class="control-label text-white"></label>
+                    <input asp-for="Email" class="form-control mt-1" placeholder="Digite seu email" />
+                    <span asp-validation-for="Email" class="text-white mt-1"></span>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label asp-for="CPF" class="control-label text-white"></label>
+                    <input asp-for="CPF" class="form-control mt-1" placeholder="Digite seu CPF" />
+                    <span asp-validation-for="CPF" class="text-white mt-1"></span>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label asp-for="Password" class="control-label text-white"></label>
+                    <input asp-for="Password" class="form-control mt-1" type="password"
+                        placeholder="Digite uma senha" />
+                    <span asp-validation-for="Password" class="text-white mt-1"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <input asp-for="TermsAccepted" type="checkbox" />
+                    <label asp-for="TermsAccepted" class="control-label text-white"></label>
+                    <span asp-validation-for="TermsAccepted" class="text-white mt-1 d-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="register-button" formaction="Cadastro"
+                        formmethod="post" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $("#CPF").inputmask('999.999.999-99');
+        });
+    </script>
+}
