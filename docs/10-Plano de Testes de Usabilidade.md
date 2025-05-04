@@ -1,34 +1,27 @@
 # Plano de Testes de Usabilidade
 
-Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
+Neste documento esta descrito o planejamento de testes de usabilidade do Odonto Facil, visando garantir a qualidade, avaliar a usabilidade e experiencia do usuário, e verificar a conformidade.
 
-Um plano de teste de usabilidade deverá conter: 
-
-## Definição do(s) objetivo(s)
-
-Antes de iniciar os testes, é essencial definir o que se deseja avaliar na usabilidade do sistema. 
-Alguns exemplos de objetivos são:
-- Verificar se os usuários conseguem concluir tarefas essenciais sem dificuldades.
+## Objetivo dos testes
+- Validar que os usuários conseguem concluir tarefas essenciais sem dificuldades.
 - Identificar barreiras na navegação e interação com o sistema.
 - Avaliar a eficiência e a satisfação do usuário ao utilizar a interface.
 - Testar a acessibilidade para diferentes perfis de usuários.
+- Avaliar a eficiência no cadastro e login dos usuarios.
 
 ## Seleção dos participantes
 
 Para garantir que o teste reflita o uso real do sistema, escolha participantes representativos do público-alvo.
 
 **Critérios para selecionar participantes:**
-- Perfis variados (experientes e iniciantes no sistema).
-- Diferentes níveis de familiaridade com tecnologia.
-- Pessoas com necessidades especiais (se aplicável).
+- **Familiaridade**: usuarios diversos, sem experiencia no sistema e com experiencia.
 
-**Quantidade recomendada:**
-Mínimo: 5 participantes.
-Ideal: Entre 8 e 12 para maior diversidade.
+## Procedimentos e Método
+
+**Tipo de teste**: Seram feitos testes por observação de conformidade.
+**Feedback**: Ao fim dos testes seram preenchidos um questionario levantado as melhorias para o sistema.
 
 ## Definição de cenários de teste
-
-Os cenários representam tarefas reais que os usuários executam no sistema. Neste projeto, cada grupo deverá definir, no mínimo, **CINCO cenários para a aplicação** e cada cenário deve incluir:
 
 - Objetivo: O que será avaliado.
 - Contexto: A situação que leva o usuário a interagir com o sistema.
@@ -109,7 +102,19 @@ Os cenários representam tarefas reais que os usuários executam no sistema. Nes
   </tbody>
 </table>
 
-/## Métodos de coleta de dados
+## Critérios de Êxito
+
+As tarefas seram avaliadas na escala de 0 a 4 para obter Exito, avaliando:
+
+- Resposta visual do sistema para o usuario.
+- Facilidade para o usuario executar seus objetivos.
+- Tempo de realização das tarefas.
+- Instruções simples e objetivas para todos usuarios, independente a familiaridade.
+- Eficiência do sistema para atender o usuario.
+
+## Métodos de coleta de dados
+
+As coletas de dados seram feitas em cada pagina do sistema por meio das 10 Heurísticas de Nielsen, avaliando de 0 a 4 cada competencia, e deixando os respectivos comentarios, preenchendo a seguinte tabela.
 
 <table border="1">
   <thead>
