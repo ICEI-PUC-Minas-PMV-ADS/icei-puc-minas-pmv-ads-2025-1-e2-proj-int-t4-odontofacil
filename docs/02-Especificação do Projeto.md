@@ -6,6 +6,10 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
+## Aprentação de Projeto
+
+<https://github.com/user-attachments/assets/914ae771-16a3-4177-adf4-20e23c49caeb>
+
 ## Personas
 
 Para garantir que nosso projeto atenda de forma satisfatória às necessidades reais dos usuários, desenvolvemos um conjunto de personas. Essas personas foram criadas com base em dados e pesquisas para refletir uma variedade de perfis e situações que nossos usuários podem enfrentar.
@@ -54,14 +58,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 |RF-001| O sistema deve permitir o cadastro de pacientes, dentistas e operadores. |ALTA|
 |RF-002| O sistema deve permitir login para pacientes, dentistas e operadores. |ALTA|
-|RF-003| O paciente deve poder agendar e cancelar consultas pelo sistema. |ALTA|
-|RF-004| O operador deve poder agendar consultas para pacientes. |ALTA|
-|RF-005| O dentista deve visualizar e gerenciar sua agenda de consultas. |ALTA|
-|RF-006| O sistema deve permitir que dentistas adicionem, editem e removam informações do prontuário dos pacientes. |ALTA|
-|RF-007| O dentista deve poder adicionar anotações sobre o tratamento do paciente a cada consulta. |ALTA|
-|RF-009| O dentista deve poder anexar resultados e prescrições ao prontuário do paciente. |ALTA|
-|RF-010| O paciente deve poder enviar e visualizar exames dentro do sistema. |ALTA|
-|RF-011| O paciente deve poder visualizar seu histórico de exames e consultas. |MÉDIA|
+|RF-003| O sistema deve permitir que o paciente agendar e cancelar consultas pelo sistema. |ALTA|
+|RF-004| O sistema deve permitir que o operador agendar consultas para pacientes. |ALTA|
+|RF-005| O sistema deve permitir que o dentista visualizar e gerenciar sua agenda de consultas. |ALTA|
+|RF-006| O sistema deve permitir que o dentista adicione, edite e remova informações do prontuário dos pacientes. |ALTA|
+|RF-007| O sistema deve permitir que o dentista possar adicionar anotações sobre o tratamento do paciente a cada consulta. |ALTA|
+|RF-009| O sistema deve permitir que o dentista anexe resultados e prescrições ao prontuário do paciente. |ALTA|
+|RF-010| O sistema deve permitir que paciente possa enviar e visualizar exames dentro do sistema. |ALTA|
+|RF-011| O sistema deve permitir que o paciente visualize seu histórico de exames e consultas. |MÉDIA|
 |RF-012| O sistema deve organizar de forma cronológica todos os atendimentos, exames e procedimentos do paciente. |MÉDIA|
 
 ### Requisitos não Funcionais
