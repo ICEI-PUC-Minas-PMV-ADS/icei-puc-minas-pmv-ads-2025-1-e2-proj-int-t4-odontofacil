@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Perfil Paciente";
+}
+
+<div class="container-perfil">
+    <div class="menu superior">
+        <a href="#" class="btn-menu">PACIENTE</a>
+        <a href="#" class="btn-menu">EXAMES</a>
+        <a href="#" class="btn-menu">PRONTUÁRIO</a>
+        <a href="#" class="btn-menu">AGENDAMENTOS</a>
+        <a href="#" class="btn-menu">HISTÓRICO CONSULTAS</a>
+    </div> 
+
+    <div class ="perfil-container">
+       <div class="foto-perfil">
+        <img src="~/person1.jfif" alt="Foto de perfil" />
+        <p>PACIENTE: RICARDO D SOUSA</p>
+
+    </div>
+
+    <div class="formulario-perfil">
+        <h2>Perfil</h2>
+        <p>Configuração da conta</p>
+
+        <form method="post">
+            <label>Nome Completo</label>
+            <input type="text"  value="Ricardo D Sousa" />
+
+            <label>Data de Nascimento</label>
+            <input type="text"  placeholder="XX/XX/XXXX" />
+
+            <label>Número de Celular</label>
+            <input type="text"  placeholder="(00) 90000-0000" />
+
+            <label>E-mail</label>
+            <input type="text"  placeholder="exemplo@email.com" />
+
+            <label>Senha</label>
+            <input type="password"  value="**********" />
+
+            <button type="submit">Salvar alterações</button>
+        </form> 
+    </div>
+    </div>
+    </div> 

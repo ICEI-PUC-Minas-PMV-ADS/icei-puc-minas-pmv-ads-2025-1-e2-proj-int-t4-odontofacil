@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Resultados de Exames";
+}
+
+<div class="container-exames">
+    <h2>Resultados de Exames</h2>
+    <p>Você pode acompanhar os seus exames e ver os resultados por aqui, novos e antigos.</p>
+    <p>Para acessar os resultados, siga o passo a passo abaixo:</p>
+    <ol>
+        <li>Após o exame ser realizado, você receberá um comprovante com seu nome e número do pedido. Guarde estas informações.</li>
+        <li>Com os dados em mãos, preencha os campos abaixo e clique em buscar.</li>
+    </ol>
+    <p>O seu médico também pode ver e avaliar os resultados no momento da consulta, pois estarão disponíveis no prontuário eletrônico.</p>
+    <p><strong>Atenção:</strong> Os resultados estarão disponíveis no sistema até 90 dias após a coleta.</p>
+
+    <form method="get" action="#">
+        <label for="nome">Nome do paciente:</label><br />
+        <input type="text" id="nome" name="nome" /><br /><br />
+
+        <label for="numero">Número do pedido:</label><br />
+        <input type="text" id="numero" name="numero" /><br /><br />
+
+        <button type="submit">BUSCAR</button>
+    </form>
+
+    <aside class="sidebar-resultados">
+        <button class="btn-enviar">📎 Enviar exame</button>
+        <h4>Resultados anteriores:</h4>
+        <ul>
+            <li><a href="#">009187530_Ricard.pdf</a></li>
+            <li><a href="#">08910780_Ricar.pdf</a></li>
+            <li><a href="#">0560548-Resul.pdf</a></li>
+            <li><a href="#">1012845-RSUL.pdf</a></li>
+        </ul>
+    </aside>
+</div>

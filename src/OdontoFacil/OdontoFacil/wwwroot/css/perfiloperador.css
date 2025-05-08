@@ -1,0 +1,75 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e6f5ee;
+    margin: 0;
+    padding: 0;
+}
+
+.painel-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #d4f3dd;
+    padding: 20px;
+    text-align: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 20px;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c7eede;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+    .top-menu a {
+        color: #2e8b57;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+.search-box {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.pacientes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+    .pacientes-table th,
+    .pacientes-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .pacientes-table th {
+        background-color: #d4f3dd;
+    }

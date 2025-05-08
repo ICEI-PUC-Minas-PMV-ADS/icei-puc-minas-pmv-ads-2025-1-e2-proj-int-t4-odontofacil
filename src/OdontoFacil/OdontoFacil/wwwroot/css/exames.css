@@ -1,0 +1,45 @@
+.container-exames {
+    padding: 20px;
+    background-color: #e6f5ee;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
+}
+
+.sidebar-resultados {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #c7eede;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.btn-enviar {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form input {
+    padding: 8px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

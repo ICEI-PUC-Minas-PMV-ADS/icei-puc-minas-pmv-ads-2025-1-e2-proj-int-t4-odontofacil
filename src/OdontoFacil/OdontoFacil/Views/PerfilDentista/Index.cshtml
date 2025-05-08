@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Painel do Dentista";
+}
+ 
+@* Mesmo css do operador *@
+<div class="painel-container">
+ 
+
+    <div class="sidebar">
+        <img src="~/person3.jfif" class="avatar" alt="Foto dentista" />
+        <p><strong>DENTISTA: MARCELO GONÇALVES</strong></p>
+        <p>ID: XXXXXXXX</p>
+        <p>Membro desde 2021</p>
+        <button class="logout-btn">Log out</button>
+    </div>
+
+
+    <div class="conteudo">
+
+        <nav class="top-menu">
+            <a href="#">OPERADOR</a>
+            <a href="#">PACIENTES</a>
+            <a href="#">AGENDAMENTOS</a>
+            <a href="#">MARCAÇÃO</a>
+            <a href="#">CADASTRO PACIENTE</a>
+            <a href="#">EXAMES</a>
+            <a href="#">ATUALIZAÇÃO DE PERFIL PACIENTE</a>
+        </nav>
+
+        <h2>PACIENTES DO DIA</h2>
+        <input type="text" placeholder="Search..." class="search-box" />
+
+        <table class="pacientes-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Patient Name</th>
+                    <th>Patient Age</th>
+                    <th>Doctor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:30 AM</td>
+                    <td>05/10/2022</td>
+                    <td>Elizabeth Palson</td>
+                    <td>32</td>
+                    <td>Dr. John</td>
+                </tr>
+                <tr>
+                    <td>10:00 AM</td>
+                    <td>05/10/2022</td>
+                    <td>John David</td>
+                    <td>28</td>
+                    <td>Dr. Joel</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
