@@ -1,0 +1,25 @@
+.container-agendamento {
+    padding: 20px;
+    background-color: #e6f5ee;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+    margin: 20px;
+    width: 60%;
+}
+
+form select, form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}

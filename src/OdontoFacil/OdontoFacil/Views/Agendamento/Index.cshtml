@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Agendamento";
+}
+
+
+<div class="container-agendamento">
+    <div class="menu superior">
+        <a href="#" class="btn-menu">PACIENTE</a>
+        <a href="#" class="btn-menu">EXAMES</a>
+        <a href="#" class="btn-menu">PRONTUÁRIO</a>
+        <a href="#" class="btn-menu">AGENDAMENTOS</a>
+        <a href="#" class="btn-menu">HISTÓRICO CONSULTAS</a>
+    </div>
+
+    <h2>Faça aqui seu agendamento!</h2>
+
+    <form method="get" action="#">
+        <label for="especialidade">Qual tipo de profissional busca para sua consulta?</label><br />
+        <select id="especialidade" name="especialidade">
+            <option selected disabled>Selecione Especialidade</option>
+            <option>Odontopediatria</option>
+            <option>Ortodontia</option>
+            <option>Clínico Geral</option>
+            <option>Periodontia</option>
+        </select><br /><br />
+
+        <label for="local">Onde deseja fazer a consulta?</label><br />
+        <select id="local" name="local">
+            <option selected disabled>Selecione o local</option>
+            <option>Clínica Central</option>
+            <option>Unidade Sul</option>
+            <option>Unidade Norte</option>
+        </select><br /><br />
+
+        <button type="submit">BUSCAR</button>
+    </form>
+</div>
