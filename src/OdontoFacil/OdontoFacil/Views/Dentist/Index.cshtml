@@ -1,0 +1,50 @@
+@model IEnumerable<OdontoFacil.Models.Data.Dentist>
+<div class="page-container">
+  <div class="page-title">
+    <h1>Dentistas</h1>
+    <a class="btn btn-primary" href="@Url.Action("Create", "Dentist")">Novo Dentista</a>
+  </div>
+  <div class="patient-list-container">
+    <div class="table-responsive">
+      <table class="patient-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>CRO</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var patient in Model)
+          {
+            <tr>
+              <td>@patient.User.Name</td>
+              <td>@FormatCPF(patient.User.CPF)</td>
+              <td>@patient.User.Email</td>
+              <td>@patient.CRO</td>
+              <td class="text-center actions">
+                <a class="btn btn-primary" btn-sm" title="Editar"
+                  href="@Url.Action("Edit", "Dentist", new { id = patient.Id })">
+                  <i class="bi bi-pencil"></i>
+                </a>
+                <a class="btn btn-danger" title="Deletar"
+                  href="@Url.Action("DeleteDentist", "Dentist", new { id = patient.Id })">
+                  <i class="bi bi-trash"></i>
+                </a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+@functions {
+  public String FormatCPF(String cpf)
+  {
+    return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
+  }
+}
