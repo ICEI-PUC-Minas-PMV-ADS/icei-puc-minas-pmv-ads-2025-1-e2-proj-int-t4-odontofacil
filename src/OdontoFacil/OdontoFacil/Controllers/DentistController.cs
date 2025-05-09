@@ -141,7 +141,4 @@ public partial class DentistController : Controller
     return RedirectToAction(nameof(Index));
   }
 
-
-  [GeneratedRegex(@"\D")]
-  private static partial Regex NumberOnly();
 }
