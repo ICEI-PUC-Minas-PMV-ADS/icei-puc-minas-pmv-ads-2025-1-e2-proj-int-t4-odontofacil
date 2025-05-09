@@ -1,0 +1,32 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace OdontoFacil.Models.ViewModels
+{
+    public class AnamneseViewModel
+    {
+        public string DoencaPrincipal { get; set; } = string.Empty;
+        public bool UsaMedicacao { get; set; }
+        public string? Medicacao { get; set; }
+
+        public bool PossuiAlergia { get; set; }
+        public string? Alergia { get; set; }
+
+        public bool PossuiDoenca { get; set; }
+        public string? Doenca { get; set; }
+
+        public bool FezCirurgia { get; set; }
+        public string? Cirurgia { get; set; }
+
+        public bool SangramentoGengiva { get; set; }
+
+        public bool RangeDentes { get; set; }
+
+        public bool DentesSensiveis { get; set; }
+
+        public bool BocaSeca { get; set; }
+
+        public bool DorMaxilarOuvido { get; set; }
+
+        public string? Observacoes { get; set; }
+    }
+}

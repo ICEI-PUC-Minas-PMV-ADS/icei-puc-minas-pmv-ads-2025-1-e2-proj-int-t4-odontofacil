@@ -69,3 +69,93 @@ button {
     border: none;
     border-radius: 4px;
 }
+
+/*css historico consulta*/ 
+
+.filtros {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filtros-opcoes label {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+table {
+    width: 100%;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+/* anamnese css*/
+.anamnese-form {
+    background-color: #f8fff9;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row,
+.form-check-row {
+    margin-bottom: 20px;
+}
+
+    .form-row label,
+    .form-check-row label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .form-check-row input[type="radio"] {
+        margin-right: 5px;
+        margin-left: 15px;
+    }
+
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-editar,
+.btn-salvar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background-color: #d4e9d4;
+    color: #2c5d2c;
+}
+
+.btn-salvar {
+    background-color: #4CAF50;
+    color: white;
+}

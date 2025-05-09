@@ -1,0 +1,56 @@
+﻿@model OdontoFacil.Models.ViewModels.AnamneseViewModel
+
+@{
+    ViewData["Title"] = "Anamnese";
+}
+
+<h2>Anamnese</h2>
+
+<form asp-action="SalvarAnamnese" method="post" class="anamnese-form">
+    <div class="form-row">
+        <label>Anamnese</label>
+        <textarea asp-for="DoencaPrincipal" placeholder="Digite aqui a sua queixa principal e a doença atual, caso tenha..."></textarea>
+    </div>
+
+    <div class="form-row-grid">
+        @* Cada linha com bool + texto *@
+        @{
+            var perguntas = new (string Label, string BoolName, string? TextoName)[]
+            {
+        ("Usa medicação?", nameof(Model.UsaMedicacao), nameof(Model.Medicacao)),
+        ("Possui alergia?", nameof(Model.PossuiAlergia), nameof(Model.Alergia)),
+        ("Doença?", nameof(Model.PossuiDoenca), nameof(Model.Doenca)),
+        ("Passou por alguma cirurgia?", nameof(Model.FezCirurgia), nameof(Model.Cirurgia)),
+        ("Sangramento na gengiva?", nameof(Model.SangramentoGengiva), null),
+        ("Costuma ranger os dentes?", nameof(Model.RangeDentes), null),
+        ("Sente dor nos dentes/gengiva?", nameof(Model.DentesSensiveis), null),
+        ("Sente gosto ruim ou boca seca?", nameof(Model.BocaSeca), null),
+        ("Dor no maxilar ou ouvido?", nameof(Model.DorMaxilarOuvido), null)
+            };
+        }
+
+        @foreach (var p in perguntas)
+        {
+            <div class="form-check-row">
+                <label>@p.Label</label>
+                <input type="radio" name="@p.BoolName" value="true" /> Sim
+                <input type="radio" name="@p.BoolName" value="false" checked /> Não
+
+                @if (p.TextoName != null)
+                {
+                    <input type="text" name="@p.TextoName" placeholder="Qual? Digite aqui..." />
+                }
+            </div>
+        }
+
+        <div class="form-row">
+            <label>Observações</label>
+            <textarea asp-for="Observacoes" placeholder="Digite aqui..."></textarea>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="btn-editar">Editar</button>
+        <button type="submit" class="btn-salvar">Salvar</button>
+    </div>
+</form>

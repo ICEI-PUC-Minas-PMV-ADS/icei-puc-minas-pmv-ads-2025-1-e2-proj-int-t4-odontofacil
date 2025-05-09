@@ -1,0 +1,34 @@
+﻿@model List<OdontoFacil.Models.ConsultaViewModel>
+
+
+<h2>Histórico de consultas</h2>
+<p>Consulte suas consultas realizadas nos últimos 12 meses.</p>
+
+<div class="filtros">
+    <input type="text" placeholder="Pesquisar..." class="form-control" />
+
+    <div class="filtros-opcoes">
+        <label><input type="radio" name="filtro" checked /> Status</label>
+        <label><input type="radio" name="filtro" /> Data</label>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Documento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var consulta in Model)
+        {
+            <tr>
+                <td>@consulta.Data.ToString("dd/MM/yy")</td>
+                <td>@consulta.Status</td>
+                <td><a href="@consulta.LinkDocumento" target="_blank">Visualizar consulta</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
