@@ -19,13 +19,13 @@ O desenvolvimento deste projeto segue a metodologia ágil Scrum, escolhida por s
 
 No contexto deste projeto, a equipe seguiu a definição clássica dos papéis do Scrum, com as seguintes responsabilidades:
 
-•	Scrum Master:
+•	Scrum Master: Cibele de Almeida Lira.
 
-•	Product Owner: 
+•	Product Owner: Rodrigo Ferreira Rodrigues.
 
-•	Equipe de Desenvolvimento: 
+•	Equipe de Desenvolvimento: Cibele de Almeida Lira, Jean Karlo Firmino Coelho, Lucas Mamédio Vieira, Heitor Flavio Silva Oliveira, Rodrigo Ferreira Rodrigues, Sérgio Arthur Marques de Souza.
 
-•	Equipe de Design:
+•	Equipe de Design: Cibele de Almeida Lira, Lucas Mamédio Vieira.
 
 ## Processo
 
