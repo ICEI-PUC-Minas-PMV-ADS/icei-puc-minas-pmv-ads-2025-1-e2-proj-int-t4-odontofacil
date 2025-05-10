@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OdontoFacil.Models.Data;
 
 [Table("Paciente")]
 public partial class Patient
 {
+    [Key]
     [Column("id")]
     [ForeignKey(nameof(User))]
     public string Id { get; set; } = null!;
