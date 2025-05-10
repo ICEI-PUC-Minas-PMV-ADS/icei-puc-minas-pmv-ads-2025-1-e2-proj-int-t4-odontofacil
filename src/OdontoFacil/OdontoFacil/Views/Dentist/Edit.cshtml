@@ -15,12 +15,12 @@
 
       <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
-        <input asp-for="Name" class="form-control mt-2" placeholder="Digite seu nome completo" />
+        <input asp-for="Name" class="form-control mt-2" placeholder="Digite seu nome completo" readonly />
       </div>
 
       <div class="form-group">
         <label asp-for="CPF" class="control-label"></label>
-        <input asp-for="CPF" class="form-control mt-2" placeholder="Digite seu CPF" />
+        <input asp-for="CPF" class="form-control mt-2" placeholder="Digite seu CPF" readonly />
       </div>
 
       <div class="form-group">
@@ -32,10 +32,12 @@
       <div class="form-group">
         <label asp-for="CRO" class="control-label"></label>
         <input asp-for="CRO" class="form-control mt-2" placeholder="Digite seu CRO" />
+        <span asp-validation-for="CRO" class="mt-2 text-danger"></span>
+
       </div>
 
       <div class="form-group">
-        <input type="submit" value="Editar" class="register-button" />
+        <input type="submit" value="Salvar" class="register-button" />
       </div>
     </div>
   </form>

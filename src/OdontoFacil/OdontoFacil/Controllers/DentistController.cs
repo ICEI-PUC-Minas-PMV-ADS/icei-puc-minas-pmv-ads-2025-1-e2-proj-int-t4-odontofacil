@@ -1,11 +1,12 @@
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OdontoFacil.Constants;
 using OdontoFacil.Data;
 using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers;
-
 public partial class DentistController : Controller
 {
 
@@ -93,7 +94,7 @@ public partial class DentistController : Controller
 
     if (dentist == null)
     {
-      return NotFound("Dentist not found.");
+      return NotFound("Dentista não encontrado.");
     }
 
     try
@@ -123,7 +124,7 @@ public partial class DentistController : Controller
   {
     if (!ModelState.IsValid)
     {
-      return NotFound("Erro ao procurar o dentista.");
+      return View(formData);
     }
 
     var dentist = formData.toEntity();
@@ -135,7 +136,7 @@ public partial class DentistController : Controller
     }
     catch (Exception ex)
     {
-      return BadRequest("Ocorreu um erro ao criar o dentista: " + ex.Message);
+      return StatusCode(500, "Ocorreu um erro interno ao criar o dentista: " + ex.Message);
     }
 
     return RedirectToAction(nameof(Index));
