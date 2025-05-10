@@ -1,0 +1,67 @@
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.page-title h1 {
+  text-transform: uppercase;
+  font-size: 28px;
+  color: #3e7353;
+}
+
+table {
+  font-size: 12px;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.patient-table thead th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.patient-table td,
+.patient-table th {
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.patient-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.patient-table td {
+  padding: 15px;
+  color: #333;
+}
+
+td.actions {
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+}
+
+.button {
+  user-select: none;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  background-color: #3e7353;
+  transition: background-color 0.3s;
+  color: white;
+  border: none;
+  text-align: center;
+  width: fit-content;
+}
+
+.create-dentist-link {
+  text-decoration: none;
+}
