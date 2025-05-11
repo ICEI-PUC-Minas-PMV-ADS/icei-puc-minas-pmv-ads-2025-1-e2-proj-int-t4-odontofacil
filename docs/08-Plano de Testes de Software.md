@@ -66,7 +66,7 @@ Casos de Teste
 |Evidência (print screen)   |  |
 |  	|  	|
 | **Caso de Teste** 	| **CT06 – Permissão total aos dentistas a um CRUD dos prontuários dos pacientes**	|
-|:---:	|:---:	|
+|	|	|
 |Requisito Associado | RF-006	- O sistema deve permitir que o dentista adicione, edite e remova informações do prontuário dos pacientes. |
 | Pré-condições 	| Acesso à conta do dentista Ademir Roque  <br> Atendimento realizado para o paciente Junior Silva em algum dia que anteceda o teste, pelo dentista Flávio Brasil  |
 | Passos 	| - Dentista selecionará o paciente Junior Silva  <br> - Dentista selecionará a exibição o atendimento realizado pelo dentista Flávio Brasil <br> - Dentista selecionará a opção “Editar”  <br> |
