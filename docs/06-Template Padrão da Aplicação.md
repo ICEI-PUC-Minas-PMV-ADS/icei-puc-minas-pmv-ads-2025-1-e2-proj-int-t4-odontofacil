@@ -1,12 +1,27 @@
 # Template Padrão da Aplicação
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>
+O sistema vai utilizar um layout limpo, focado na usabilidade. Neste documento, aprensentaremos duas telas que representarão o modelo adotado para as páginas do sistema.
 
-Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+## Identidade Visual
 
-> **Links Úteis**:
->
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+Paleta de cores : Cores em diferentes tons de verde remetendo saúde, tranquilidade e limpeza.
+Tipografia : Sem serifa, bem legível.
+Iconografia : Ícones discretos e funcionais, integrados ao cabeçalho.
+
+## Estrutura Geral
+
+Cabeçalho fixo : Logotipo à esquerda e menu de navegação principal ao centro/direita.
+Botões de navegação : Com alto contraste e destaque para as páginas principais.
+Área lateral : Exibição das informações do usuário logado.
+
+## Exemplo de tela : Perfil Paciente 
+
+<img src="https://github.com/user-attachments/assets/51a018d9-36b3-4b2a-88c3-7e215be7db8f" alt="Perfil Paciente"/>
+
+## Exemplo de tela : Perfil Dentista 
+
+<img src="https://github.com/user-attachments/assets/78b12f14-4f33-4d64-8272-1e3fcf947a28" alt="Perfil Dentista"/>
+
+
+
+
