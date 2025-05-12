@@ -43,6 +43,5 @@ public class PatientViewModel
 
     [Display(Name = "Paciente ID")]
     public string PatientId { get; set; } = null!;
-
 }
 
