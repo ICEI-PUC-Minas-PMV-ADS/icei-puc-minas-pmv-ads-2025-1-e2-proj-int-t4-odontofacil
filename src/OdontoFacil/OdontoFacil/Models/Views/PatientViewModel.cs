@@ -6,6 +6,7 @@ using OdontoFacil.Models.Data;
 namespace OdontoFacil.Models.Views;
 
 public class PatientViewModel
+    
 {
     public Patient Patient { get; set; } 
     public List<Note> Note { get; set; } 
@@ -43,6 +44,5 @@ public class PatientViewModel
 
     [Display(Name = "Paciente ID")]
     public string PatientId { get; set; } = null!;
-
 }
 
