@@ -1,2 +1,52 @@
 @model OdontoFacil.Models.Views.PatientViewModel
 
+@{
+    ViewData["Title"] = "Paciente";
+    
+
+}
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    h3 {
+        color: #3E7353;
+
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div>
+    <h3>Pacientes do Dia</h3>
+    <table class="table">
+        <tr>
+            <th>Horário</th>
+            <th>Data</th>
+            <th>Paciente</th>
+            <th>Idade</th>
+            <th>Médico</th>
+            <th>Anotações</th>
+        </tr>
+        <tr>
+            <td>@(Model.Date != null ? Model.Date.ToString("") : "N/A")</td>
+            <td>@(Model.Date != null ? Model.Date.ToString("dd/MM/yyyy") : "N/A")</td>
+            <td>@Model.Name</td>
+            <td>@Model.Age</td>
+            <td>@(Model.Note != null )</td>
+            <ul>
+                @foreach (var note in Model.Note)
+                {
+                    <li>@note.ContentNote</li>
+                }
+            </ul>
+
+        </tr>
+    </table>
+</div>
