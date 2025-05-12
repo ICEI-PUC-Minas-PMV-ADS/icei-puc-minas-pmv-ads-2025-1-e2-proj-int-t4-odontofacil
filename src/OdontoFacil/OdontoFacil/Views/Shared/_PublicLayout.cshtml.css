@@ -22,10 +22,11 @@
 }
 
 @keyframes toGreenBackground {
-    0% {
+    from {
         background-color: transparent;
     }
-    100% {
+    
+    to {
         background-color: #9bbda49f;
     }
 }
@@ -44,6 +45,7 @@
     padding: 2px 8px;
     transition: background-color 0.3s;
     user-select: none;
+    text-transform: uppercase;
 }
 
 .nav-bar-link:hover {

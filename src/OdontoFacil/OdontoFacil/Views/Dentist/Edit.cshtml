@@ -1,0 +1,50 @@
+@model OdontoFacil.Models.Views.UpdateDentistViewModel
+
+@{
+  ViewData["Title"] = "Editar Dentista";
+}
+
+<div>
+  <div class="page-title">
+    <h1>Editar Dentista</h1>
+  </div>
+
+  <form id="edit-dentist-form" asp-action="UpdateDentist" asp-controller="Dentist" method="post" class="mt-5">
+    <div class="form-container">
+      <input type="hidden" name="Id" value="@ViewData["DentistId"]" />
+
+      <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control mt-2" placeholder="Digite seu nome completo" readonly />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="CPF" class="control-label"></label>
+        <input asp-for="CPF" class="form-control mt-2" placeholder="Digite seu CPF" readonly />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control mt-2" placeholder="Digite seu email" />
+        <span asp-validation-for="Email" class="mt-2 text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="CRO" class="control-label"></label>
+        <input asp-for="CRO" class="form-control mt-2" placeholder="Digite seu CRO" />
+        <span asp-validation-for="CRO" class="mt-2 text-danger"></span>
+
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Salvar" class="register-button" />
+      </div>
+    </div>
+  </form>
+</div>
+
+@section Scripts {
+  @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+  }
+}

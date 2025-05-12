@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="home-page">
+    <div class="logo-wrapper">
+        <img src="~/img/logo.png" width="100%" alt="">
+    </div>
+    <div class="main-content-wrapper">
+        <img src="~/img/home-banner.png" width="100%">
+
+        <div class="main-content">
+            <span class="title">Conheça a melhor clínica odontológica da região</span>
+            <div class="actions-container">
+                <a href="/Login" class="button">Login</a>
+                <a href="/Cadastro" class="button outlined">Cadastro</a>
+            </div>
+        </div>
+    </div>
 </div>
