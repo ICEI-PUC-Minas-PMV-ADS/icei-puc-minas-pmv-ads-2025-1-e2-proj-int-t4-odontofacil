@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OdontoFacil.Models.Data;
 
 namespace OdontoFacil.Data;
@@ -40,7 +40,12 @@ public partial class OdontoFacilDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<AnamnesisQuestion> AnamnesisQuestions { get; set; }
+
+    public virtual DbSet<AnamnesisAnswer> AnamnesisAnswers { get; set; }
+    
     public virtual DbSet<Note> Notes { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
