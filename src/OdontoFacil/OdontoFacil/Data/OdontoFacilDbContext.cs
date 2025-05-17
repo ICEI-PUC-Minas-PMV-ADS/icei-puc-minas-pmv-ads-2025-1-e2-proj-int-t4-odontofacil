@@ -40,6 +40,10 @@ public partial class OdontoFacilDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<AnamnesisQuestion> AnamnesisQuestions { get; set; }
+
+    public virtual DbSet<AnamnesisAnswer> AnamnesisAnswers { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
