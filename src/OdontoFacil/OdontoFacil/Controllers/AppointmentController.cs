@@ -5,6 +5,7 @@ using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers;
 
+// TODO: adicionar barreira de autenticação
 public class AppointmentController : Controller
 {
 
