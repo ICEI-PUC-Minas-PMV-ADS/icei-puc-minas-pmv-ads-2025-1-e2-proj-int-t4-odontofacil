@@ -21,6 +21,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Logout";
         options.ExpireTimeSpan = TimeSpan.FromHours(1);
         options.SlidingExpiration = true;
+        options.AccessDeniedPath = "/AccessDenied";
     });
 
 var app = builder.Build();

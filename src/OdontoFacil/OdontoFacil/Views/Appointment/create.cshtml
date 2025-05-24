@@ -1,57 +1,82 @@
-﻿@model OdontoFacil.Models.Views.ScheduleAppointmentViewModel
+﻿@using OdontoFacil.Constants
+@using System.Text.RegularExpressions
+@model OdontoFacil.Models.Views.ScheduleAppointmentViewModel
 
 @{
     ViewData["Title"] = "Agendar atendimento";
+
+    bool ShouldAllowUserIdChoice()
+    {
+        return User.IsInRole(UserTypes.Dentist) || User.IsInRole(UserTypes.Helper);
+    }
+
+    string FormatCPF(string rawCPF)
+    {
+        return Regex.Replace(rawCPF, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+    }
 }
 
 @section Head {
-    <link
-      rel="stylesheet"
-      href="~/lib/flatpickr/dist/css/flatpickr.min.css"
-    />   
+    <link rel="stylesheet" href="~/lib/flatpickr/dist/css/flatpickr.min.css" />
 }
 
-<div class="login-page">
-    <div class="logo-wrapper">
-        <img src="~/img/logo.png" width="100%">
-    </div>
-
-    <div class="row justify-content-center form-container">
-        <div class="col-md-5 mt-5">
-            <form asp-action="Index" asp-controller="Login">
+<div class="schedule-appointment-page">
+    <h1 class="title text-center">Faça aqui seu agendamento!</h1>
+    <div class="row mt-5">
+        <div class="offset-md-3 col-md-6">
+            <form asp-controller="Appointment" id="schedule-appointment-form">
                 <div asp-validation-summary="ModelOnly"></div>
 
-                @* TODO: renderizar select de paciente caso o usuário logado seja operador ou dentista *@
+                @if (ShouldAllowUserIdChoice())
+                {
+                    <div class="form-group mt-2 select-container">
+                        <label asp-for="UserId" class="control-label"></label>
+                        <select asp-for="UserId" class="form-control mt-1" autocomplete="off">
+                            <option value="">Selecione o paciente</option>
+                            @foreach (var User in ViewBag.Users)
+                            {
+                                <option value="@User.Id">
+                                    @User.Name - @FormatCPF(User.CPF)
+                                </option>
+                            }
+                        </select>
+                        <span asp-validation-for="UserId" class="mt-1"></span>
+                    </div>
+                }
+                else
+                {
+                    <input type="hidden" asp-for="UserId">
+                }
 
-                <div class="form-group mt-2">
+                <div class="form-group mt-2 select-container">
                     <label asp-for="DentistId" class="control-label"></label>
-                    <select asp-for="DentistId" class="form-control mt-1">
+                    <select asp-for="DentistId" class="form-control mt-1" autocomplete="off">
                         <option value="">Selecione o dentista...</option>
-
                         @foreach (var dentist in ViewBag.Dentists)
                         {
                             <option value="@dentist.Id">@dentist.User.Name</option>
                         }
                     </select>
+                    <span asp-validation-for="DentistId" class="mt-1"></span>
                 </div>
 
                 <div class="form-group mt-2">
                     <label asp-for="Date" class="control-label"></label>
-                    <input asp-for="Date" class="form-control mt-1" disabled/>
-                    <span asp-validation-for="Date" class= mt-1"></span>
+                    <input asp-for="Date" class="form-control mt-1" disabled autocomplete="off" />
+                    <span asp-validation-for="Date" class="mt-1"></span>
                 </div>
 
-                <div class="form-group mt-2">
+                <div class="form-group mt-2 select-container">
                     <label asp-for="Time" class="control-label"></label>
-                    <select id="Time" name="Time" class="form-control mt-1" disabled>
+                    <select asp-for="Time" name="Time" class="form-control mt-1" disabled autocomplete="off">
                     </select>
-                    <span asp-validation-for="Time" class= mt-1"></span>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <input type="submit" value="Agendar atendimento" class="button" />
+                    <span asp-validation-for="Time" class="mt-1"></span>
                 </div>
             </form>
+        </div>
+        <div class="d-flex col-12 col-lg-3 justify-content-center align-items-end">
+            <input type="submit" value="Confirmar agendamento" class="button" formaction="/appointment/Create"
+                formmethod="post" form="schedule-appointment-form" />
         </div>
     </div>
 </div>
@@ -79,9 +104,10 @@
                 minDate: new Date().setDate(today.getDate() + 1),
                 maxDate: new Date().setMonth(today.getMonth() + 6),
                 disable: [(date) => {
+                    const isWeekend = date.getDay() === 0 || date.getDay() === 6
                     const dateAsString = flatpickr.formatDate(date, "Y-m-d")
-                    const { unavailableDates } = state; 
-                    return unavailableDates.includes(dateAsString)
+                    const { unavailableDates } = state;
+                    return isWeekend || unavailableDates.includes(dateAsString)
                 }]
             });
         }
@@ -93,11 +119,12 @@
             timeSelect.innerHTML = '';
 
             const { unavailableHours } = state;
-            
-            for (let hour = initialHour; hour <= lastHour; hour++ ) {
-                const hourString = `${hour}:00:00`;
-                
-                if(!unavailableHours.includes(hourString)) {
+
+            for (let hour = initialHour; hour <= lastHour; hour++) {
+                const paddedHour = hour.toString().padStart(2, '0')
+                const hourString = `${paddedHour}:00`;
+
+                if (!unavailableHours.includes(hourString)) {
                     const option = document.createElement('option');
                     option.value = hourString;
                     option.textContent = hourString;
@@ -113,8 +140,8 @@
             $('#Time').val('');
 
             const dentistId = event.currentTarget.value;
-            
-            if(!dentistId){
+
+            if (!dentistId) {
                 return
             }
 

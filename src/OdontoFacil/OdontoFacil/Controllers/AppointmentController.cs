@@ -1,11 +1,15 @@
+using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OdontoFacil.Constants;
 using OdontoFacil.Data;
+using OdontoFacil.Models.Data;
 using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers;
 
-// TODO: adicionar barreira de autenticação
+[Authorize]
 public class AppointmentController : Controller
 {
 
@@ -24,19 +28,32 @@ public class AppointmentController : Controller
     [Route("Agendar")]
     public async Task<IActionResult> Create()
     {
-        // TODO: Retornar pacientes caso o usuário logado seja dentista ou operador
-        //TODO: filtrar por especialidade
+        var viewModel = new ScheduleAppointmentViewModel { };
         var dentists = await _dbContext.Dentists
             .Include(dentist => dentist.User)
+            .OrderBy(dentist => dentist.User.Name)
             .ToListAsync();
 
         ViewBag.Dentists = dentists;
 
-        return View();
+        if (ShouldAllowUserIdChoice())
+        {
+            var users = await _dbContext.Users
+                .Where(user => user.UserType == UserTypes.Patient)
+                .OrderBy(user => user.Name)
+                .ToListAsync();
+            ViewBag.Users = users;
+        }
+        else
+        {
+            viewModel.UserId = GetUserIdFromSession();
+        }
+
+        return View(viewModel);
     }
 
     [Route("appointment/unavailableDates/{dentistId}")]
-    public async Task<IActionResult> GetUnvailableDates(string dentistId)
+    public async Task<IActionResult> GetUnavailableDates(string dentistId)
     {
         var dates = await _dbContext.Database
             .SqlQuery<DateOnly>($"""
@@ -54,7 +71,7 @@ public class AppointmentController : Controller
     }
 
     [Route("appointment/unavailableHours/{dentistId}/{date}")]
-    public async Task<IActionResult> GetUnvailableDates(string dentistId, string date)
+    public async Task<IActionResult> GetUnavailableDates(string dentistId, string date)
     {
         var parsedDate = DateOnly.Parse(date);
         var hours = await _dbContext.Appointments
@@ -64,22 +81,42 @@ public class AppointmentController : Controller
                 appointment.Date == parsedDate &&
                 appointment.DentistId == dentistId
             )
-            .Select(appointment => appointment.Hour)
+            .Select(appointment => appointment.Hour.ToString("HH:mm"))
             .ToListAsync();
 
         return Ok(hours);
     }
 
-    // POST: /appointment/Create
     [HttpPost]
     public IActionResult Create(ScheduleAppointmentViewModel formData)
     {
         if (ModelState.IsValid)
         {
-            // TODO: Inserir no banco
-            // TODO: Redirecionar para a tela de agendamentos
-            return RedirectToAction(nameof(Index));
+            var UserId = ShouldAllowUserIdChoice() ? formData.UserId : GetUserIdFromSession();
+            var appointment = new Appointment
+            {
+                Id = Guid.NewGuid().ToString(),
+                DentistId = formData.DentistId,
+                Date = DateOnly.Parse(formData.Date, new CultureInfo("pt-BR")),
+                Hour = TimeOnly.Parse(formData.Time),
+                PatientId = UserId
+            };
+            _dbContext.Appointments.Add(appointment);
+            _dbContext.SaveChanges();
+            return Redirect("/Agendamentos");
         }
+
         return View(formData);
+    }
+
+    private bool ShouldAllowUserIdChoice()
+    {
+        return User.IsInRole(UserTypes.Dentist) || User.IsInRole(UserTypes.Helper);
+    }
+
+    private string GetUserIdFromSession()
+    {
+        var userId = User.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
+        return userId!;
     }
 }

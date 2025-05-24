@@ -1,5 +1,5 @@
 .flatpickr-input:not(:disabled)[readonly] {
-    background-color: unset;
+    background-color: white;
 }
 
 .flatpickr-day {
