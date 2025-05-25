@@ -88,7 +88,7 @@ public class AppointmentController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create(ScheduleAppointmentViewModel formData)
+    public async Task<IActionResult> CreateAsync(ScheduleAppointmentViewModel formData)
     {
         if (ModelState.IsValid)
         {
@@ -102,7 +102,7 @@ public class AppointmentController : Controller
                 PatientId = UserId
             };
             _dbContext.Appointments.Add(appointment);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
             return Redirect("/Agendamentos");
         }
 

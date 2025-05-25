@@ -162,10 +162,10 @@
             const dentistId = $('#DentistId').val();
             const selectedDate = event.currentTarget.value;
             const parsedDate = flatpickr.parseDate(selectedDate, "d/m/Y")
-            const formateDate = flatpickr.formatDate(parsedDate, "Y-m-d")
+            const formattedDate = flatpickr.formatDate(parsedDate, "Y-m-d")
 
             try {
-                const unavailableHoursRes = await fetch(`/appointment/unavailableHours/${dentistId}/${formateDate}`);
+                const unavailableHoursRes = await fetch(`/appointment/unavailableHours/${dentistId}/${formattedDate}`);
                 const unavailableHours = await unavailableHoursRes.json();
                 state.unavailableHours = unavailableHours;
                 renderTimeSelect()
