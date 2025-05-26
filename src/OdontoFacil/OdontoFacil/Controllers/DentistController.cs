@@ -7,6 +7,7 @@ using OdontoFacil.Data;
 using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers;
+
 public partial class DentistController : Controller
 {
 
