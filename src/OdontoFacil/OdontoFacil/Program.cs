@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using OdontoFacil.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<OdontoFacil.Data.OdontoFacilDbContext>(options =>
-    options.UseNpgsql(connectionString)
+builder.Services.AddDbContext<OdontoFacilDbContext>(options =>
+    options.UseSqlServer(connectionString)
     .EnableSensitiveDataLogging()
     .UseLazyLoadingProxies(false)
 );
