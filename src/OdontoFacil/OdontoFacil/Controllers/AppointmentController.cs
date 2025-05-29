@@ -57,14 +57,15 @@ public class AppointmentController : Controller
     {
         var dates = await _dbContext.Database
             .SqlQuery<DateOnly>($"""
-                SELECT data FROM "Atendimento"
-                JOIN "Dentista" ON "Atendimento".id_dentista = "Dentista".id
+                SELECT data
+                FROM [Atendimento]
+                JOIN [Dentista] ON [Atendimento].id_dentista = [Dentista].id
                 WHERE 
-                    data > now()
-                    AND EXTRACT(HOUR FROM hora) BETWEEN 9 AND 18
-                    AND "Dentista".id = {dentistId} 
+                    [Atendimento].data > GETDATE()
+                    AND DATEPART(HOUR, hora) BETWEEN 9 AND 18
+                    AND [Dentista].id = {dentistId} 
                 GROUP BY data
-                    HAVING COUNT(DISTINCT EXTRACT(HOUR FROM hora)) = 10;
+                HAVING COUNT(DISTINCT DATEPART(HOUR, hora)) = 10
             """).ToListAsync();
 
         return Ok(dates);
