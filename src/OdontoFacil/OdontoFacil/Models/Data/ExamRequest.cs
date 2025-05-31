@@ -27,7 +27,7 @@ public partial class ExamRequest
 
     public virtual Patient Patient { get; set; } = null!;
 
-    public virtual ICollection<ExamResult> Results { get; set; } = new List<ExamResult>();
+    public virtual ExamResult Result { get; set; } = null!;
 
     public virtual ExamType TypeNavigation { get; set; } = null!;
 }

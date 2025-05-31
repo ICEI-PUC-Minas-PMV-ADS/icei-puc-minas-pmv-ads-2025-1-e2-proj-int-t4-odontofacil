@@ -1,0 +1,47 @@
+@model IEnumerable<OdontoFacil.Models.Views.ExamViewModel>
+<div class="page-container">
+  <div class="page-title">
+    <h1>Pedidos de Exames</h1>
+    <a class="btn btn-primary" href="@Url.Action("Create", "Dentist")">Novo Pedido</a>
+  </div>
+  <div class="patient-list-container">
+    <div class="table-responsive">
+      <table class="patient-table">
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Dentista</th>
+            <th>Tipo</th>
+            <th>Data</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var examRequest in Model)
+          {
+            <tr>
+              <td>@examRequest.Patient</td>
+              <td>@examRequest.Dentist.</td>
+              <td>@examRequest.Type</td>
+              <td>@examRequest.RequestDate</td>
+              <td>
+                @if (examRequest.Result == null)
+                {
+                  <button class="btn btn-sm btn-secondary" disabled>
+                    Sem Resultado
+                  </button>
+                }
+                else
+                {
+                  <a class="btn btn-primary btn-sm">
+                    Visualizar Resultado
+                  </a>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
