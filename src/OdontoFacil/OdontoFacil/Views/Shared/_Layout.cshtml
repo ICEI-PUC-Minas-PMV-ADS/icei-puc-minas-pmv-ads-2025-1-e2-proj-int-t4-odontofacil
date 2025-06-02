@@ -25,6 +25,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole(OdontoFacil.Constants.UserTypes.Dentist) || User.IsInRole(OdontoFacil.Constants.UserTypes.ClassHelper))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Patients" asp-action="List">Pacientes</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

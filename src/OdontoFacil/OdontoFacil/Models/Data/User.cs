@@ -25,6 +25,9 @@ public partial class User
     [Column(name: "tipo")]
     public string UserType { get; set; } = null!;
 
+    [Column(name: "telefone")]
+    public string PhoneNumber { get; set; } = null!;
+
     public virtual Helper? Helper { get; set; }
 
     public virtual Dentist? Dentist { get; set; }

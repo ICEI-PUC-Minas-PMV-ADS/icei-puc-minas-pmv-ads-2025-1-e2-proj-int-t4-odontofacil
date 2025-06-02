@@ -2,9 +2,8 @@
 
 @{
     ViewData["Title"] = "Paciente";
-    
-
 }
+
 <style>
     .table {
         width: 100%;
@@ -26,6 +25,7 @@
 <div>
     <h3>Pacientes do Dia</h3>
     <table class="table">
+        <thead>
         <tr>
             <th>Horário</th>
             <th>Data</th>
@@ -34,19 +34,39 @@
             <th>Médico</th>
             <th>Anotações</th>
         </tr>
-        <tr>
-            <td>@(Model.Date != null ? Model.Date.ToString("") : "N/A")</td>
-            <td>@(Model.Date != null ? Model.Date.ToString("dd/MM/yyyy") : "N/A")</td>
-            <td>@Model.Name</td>
-            <td>@Model.Age</td>
-            <td>@(Model.Note != null )</td>
-            <ul>
-                @foreach (var note in Model.Note)
-                {
-                    <li>@note.ContentNote</li>
-                }
-            </ul>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>
+                    @(Model.Appointment?.AppointmentDateTime?.ToString("HH:mm") ?? "N/A")
+                </td>
+                <td>
+                    @* Exibe a data do agendamento, se houver *@
+                    @(Model.Date?.ToString("dd/MM/yyyy") ?? "N/A")
+                </td>
+                <td>@Model.Name</td>
+                <td>@Model.Age</td>
+                <td>
+                    @* Exibe o nome do dentista do agendamento, se houver *@
+                    @(Model.Dentist?.User?.Name ?? "N/A")
+                </td>
+                <td>
+                    @* Itera sobre as notas e exibe o conteúdo de cada uma *@
+                    @if (Model.Note != null && Model.Note.Any())
+                    {
+                        foreach (var note in Model.Note)
+                        {
+                            <p>@note.ContentNote</p>
+                        }
+                    }
+                    else
+                    {
+                        <span>Nenhuma anotação</span>
+                    }
+                </td>
+                
 
-        </tr>
+            </tr>
+        </tbody>    
     </table>
 </div>

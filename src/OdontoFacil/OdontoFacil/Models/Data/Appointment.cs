@@ -19,6 +19,9 @@ public partial class Appointment
     [Column(name: "data")]
     public DateOnly Date { get; set; }
 
+    [Column(name: "data_hora")]
+    public DateTime? AppointmentDateTime { get; set; }
+
     public virtual Dentist Dentist { get; set; } = null!;
 
     public virtual Patient Patient { get; set; } = null!;

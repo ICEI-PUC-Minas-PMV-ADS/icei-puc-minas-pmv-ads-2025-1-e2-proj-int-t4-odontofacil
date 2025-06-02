@@ -4,6 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
+import { EventHandler } from './EventHandler';
 
 /**
  * --------------------------------------------------------------------------
@@ -203,7 +204,7 @@ const reflow = element => {
   element.offsetHeight;
 };
 
-const getjQuery = () => {
+export const getjQuery = () => {
   const {
     jQuery
   } = window;
@@ -330,7 +331,7 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
 
 const namespaceRegex = /[^.]*(?=\..*)\.|.*/;
 const stripNameRegex = /\..*/;
-const stripUidRegex = /::\d+$/;
+export const stripUidRegex = /::\d+$/;
 const eventRegistry = {}; // Events storage
 
 let uidEvent = 1;
@@ -339,7 +340,7 @@ const customEvents = {
   mouseleave: 'mouseout'
 };
 const customEventsRegex = /^(mouseenter|mouseleave)/i;
-const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
+export const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
 /**
  * ------------------------------------------------------------------------
  * Private methods
@@ -350,7 +351,7 @@ function getUidEvent(element, uid) {
   return uid && `${uid}::${uidEvent++}` || element.uidEvent || uidEvent++;
 }
 
-function getEvent(element) {
+export function getEvent(element) {
   const uid = getUidEvent(element);
   element.uidEvent = uid;
   eventRegistry[uid] = eventRegistry[uid] || {};
@@ -409,7 +410,7 @@ function findHandler(events, handler, delegationSelector = null) {
   return null;
 }
 
-function normalizeParams(originalTypeEvent, handler, delegationFn) {
+export function normalizeParams(originalTypeEvent, handler, delegationFn) {
   const delegation = typeof handler === 'string';
   const originalHandler = delegation ? delegationFn : handler;
   let typeEvent = getTypeEvent(originalTypeEvent);
@@ -422,7 +423,7 @@ function normalizeParams(originalTypeEvent, handler, delegationFn) {
   return [delegation, originalHandler, typeEvent];
 }
 
-function addHandler(element, originalTypeEvent, handler, delegationFn, oneOff) {
+export function addHandler(element, originalTypeEvent, handler, delegationFn, oneOff) {
   if (typeof originalTypeEvent !== 'string' || !element) {
     return;
   }
@@ -470,7 +471,7 @@ function addHandler(element, originalTypeEvent, handler, delegationFn, oneOff) {
   element.addEventListener(typeEvent, fn, delegation);
 }
 
-function removeHandler(element, events, typeEvent, handler, delegationSelector) {
+export function removeHandler(element, events, typeEvent, handler, delegationSelector) {
   const fn = findHandler(events[typeEvent], handler, delegationSelector);
 
   if (!fn) {
@@ -481,7 +482,7 @@ function removeHandler(element, events, typeEvent, handler, delegationSelector) 
   delete events[typeEvent][fn.uidEvent];
 }
 
-function removeNamespacedHandlers(element, events, typeEvent, namespace) {
+export function removeNamespacedHandlers(element, events, typeEvent, namespace) {
   const storeElementEvent = events[typeEvent] || {};
   Object.keys(storeElementEvent).forEach(handlerKey => {
     if (handlerKey.includes(namespace)) {
@@ -491,119 +492,11 @@ function removeNamespacedHandlers(element, events, typeEvent, namespace) {
   });
 }
 
-function getTypeEvent(event) {
+export function getTypeEvent(event) {
   // allow to get the native events from namespaced events ('click.bs.button' --> 'click')
   event = event.replace(stripNameRegex, '');
   return customEvents[event] || event;
 }
-
-const EventHandler = {
-  on(element, event, handler, delegationFn) {
-    addHandler(element, event, handler, delegationFn, false);
-  },
-
-  one(element, event, handler, delegationFn) {
-    addHandler(element, event, handler, delegationFn, true);
-  },
-
-  off(element, originalTypeEvent, handler, delegationFn) {
-    if (typeof originalTypeEvent !== 'string' || !element) {
-      return;
-    }
-
-    const [delegation, originalHandler, typeEvent] = normalizeParams(originalTypeEvent, handler, delegationFn);
-    const inNamespace = typeEvent !== originalTypeEvent;
-    const events = getEvent(element);
-    const isNamespace = originalTypeEvent.startsWith('.');
-
-    if (typeof originalHandler !== 'undefined') {
-      // Simplest case: handler is passed, remove that listener ONLY.
-      if (!events || !events[typeEvent]) {
-        return;
-      }
-
-      removeHandler(element, events, typeEvent, originalHandler, delegation ? handler : null);
-      return;
-    }
-
-    if (isNamespace) {
-      Object.keys(events).forEach(elementEvent => {
-        removeNamespacedHandlers(element, events, elementEvent, originalTypeEvent.slice(1));
-      });
-    }
-
-    const storeElementEvent = events[typeEvent] || {};
-    Object.keys(storeElementEvent).forEach(keyHandlers => {
-      const handlerKey = keyHandlers.replace(stripUidRegex, '');
-
-      if (!inNamespace || originalTypeEvent.includes(handlerKey)) {
-        const event = storeElementEvent[keyHandlers];
-        removeHandler(element, events, typeEvent, event.originalHandler, event.delegationSelector);
-      }
-    });
-  },
-
-  trigger(element, event, args) {
-    if (typeof event !== 'string' || !element) {
-      return null;
-    }
-
-    const $ = getjQuery();
-    const typeEvent = getTypeEvent(event);
-    const inNamespace = event !== typeEvent;
-    const isNative = nativeEvents.has(typeEvent);
-    let jQueryEvent;
-    let bubbles = true;
-    let nativeDispatch = true;
-    let defaultPrevented = false;
-    let evt = null;
-
-    if (inNamespace && $) {
-      jQueryEvent = $.Event(event, args);
-      $(element).trigger(jQueryEvent);
-      bubbles = !jQueryEvent.isPropagationStopped();
-      nativeDispatch = !jQueryEvent.isImmediatePropagationStopped();
-      defaultPrevented = jQueryEvent.isDefaultPrevented();
-    }
-
-    if (isNative) {
-      evt = document.createEvent('HTMLEvents');
-      evt.initEvent(typeEvent, bubbles, true);
-    } else {
-      evt = new CustomEvent(event, {
-        bubbles,
-        cancelable: true
-      });
-    } // merge custom information in our event
-
-
-    if (typeof args !== 'undefined') {
-      Object.keys(args).forEach(key => {
-        Object.defineProperty(evt, key, {
-          get() {
-            return args[key];
-          }
-
-        });
-      });
-    }
-
-    if (defaultPrevented) {
-      evt.preventDefault();
-    }
-
-    if (nativeDispatch) {
-      element.dispatchEvent(evt);
-    }
-
-    if (evt.defaultPrevented && typeof jQueryEvent !== 'undefined') {
-      jQueryEvent.preventDefault();
-    }
-
-    return evt;
-  }
-
-};
 
 /**
  * --------------------------------------------------------------------------
