@@ -1,0 +1,46 @@
+@model OdontoFacil.Models.Views.CreateExamRequestViewModel
+@{
+    ViewData["Title"] = "Solicitar Exame";
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+
+<div class="container">
+    <h2>Solicitação de Exame</h2>
+
+    <form method="post" asp-action="Create">
+
+        <div class="form-group mt-2 select-container">
+            <label asp-for="PatientId" class="control-label"></label>
+            <select asp-for="PatientId" class="form-control mt-1" autocomplete="off">
+                <option value="">Selecione o paciente</option>
+                @foreach (var User in ViewBag.Users)
+                {
+                    <option value="@User.Id">
+                        @User.Name - @User.CPF
+                    </option>
+                }
+            </select>
+            <span asp-validation-for="PatientId" class="mt-1"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="TypeId" class="form-label">Tipo de Exame:</label>
+            <select asp-for="TypeId" class="form-select" required>
+                @foreach (var Type in ViewBag.Types)
+                {
+                    <option value="@Type.Id">@Type.Description</option>
+                }
+            </select>
+            <span asp-validation-for="TypeId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Solicitar</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
