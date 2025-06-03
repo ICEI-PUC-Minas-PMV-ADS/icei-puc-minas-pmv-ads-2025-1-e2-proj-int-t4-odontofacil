@@ -3,10 +3,11 @@ using OdontoFacil.Models.Data;
 namespace OdontoFacil.Models.Views
 
 {
-  public class ExamViewModel
+
+  public class ExamViewModelItem
   {
 
-    public ExamViewModel(Data.ExamRequest examRequest)
+    public ExamViewModelItem(Data.ExamRequest examRequest)
     {
       Id = examRequest.Id;
       RequestDate = examRequest.RequestDate;
@@ -22,5 +23,18 @@ namespace OdontoFacil.Models.Views
     public string? Dentist { get; set; }
     public string? Type { get; set; }
     public ExamResult Result { get; set; }
+  }
+
+  public class ExamViewModel
+  {
+
+    public ExamViewModel(IEnumerable<Data.ExamRequest> examRequests)
+    {
+      Exams = examRequests.Select(er => new ExamViewModelItem(er)).ToList();
+    }
+
+    public IEnumerable<ExamViewModelItem> Exams { get; set; }
+
+    public string? UserId { get; set; }
   }
 }

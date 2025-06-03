@@ -1,47 +1,76 @@
-@model IEnumerable<OdontoFacil.Models.Views.ExamViewModel>
+@using OdontoFacil.Constants
+@using System.Text.RegularExpressions
+@model OdontoFacil.Models.Views.ExamViewModel
+
+@{
+  ViewData["Title"] = "Agendar atendimento";
+
+  bool ShouldAllowUserIdChoice()
+  {
+    return User.IsInRole(UserTypes.Dentist) || User.IsInRole(UserTypes.Helper);
+  }
+
+  string FormatCPF(string rawCPF)
+  {
+    return Regex.Replace(rawCPF, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+  }
+}
+
 <div class="page-container">
   <div class="page-title">
     <h1>Pedidos de Exames</h1>
-    <a class="btn btn-primary" href="@Url.Action("Create", "Dentist")">Novo Pedido</a>
+    <a class="btn btn-primary">Novo Pedido</a>
   </div>
-  <div class="patient-list-container">
-    <div class="table-responsive">
-      <table class="patient-table">
-        <thead>
-          <tr>
-            <th>Paciente</th>
-            <th>Dentista</th>
-            <th>Tipo</th>
-            <th>Data</th>
-            <th>Resultado</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach (var examRequest in Model)
+
+  @if (ShouldAllowUserIdChoice())
+  {
+    <form method="get">
+      <div class="form-group mt-2 select-container">
+        <label for="UserId">Filtrar por paciente:</label>
+        <select name="userId" class="form-control mt-1" autocomplete="off">
+          <option value="">Todos os pacientes</option>
+          @foreach (var user in ViewBag.Users)
           {
-            <tr>
-              <td>@examRequest.Patient</td>
-              <td>@examRequest.Dentist.</td>
-              <td>@examRequest.Type</td>
-              <td>@examRequest.RequestDate</td>
-              <td>
-                @if (examRequest.Result == null)
-                {
-                  <button class="btn btn-sm btn-secondary" disabled>
-                    Sem Resultado
-                  </button>
-                }
-                else
-                {
-                  <a class="btn btn-primary btn-sm">
-                    Visualizar Resultado
-                  </a>
-                }
-              </td>
-            </tr>
+            <option value="@user.Id">
+              @user.Name - @FormatCPF(user.CPF)
+            </option>
           }
-        </tbody>
-      </table>
-    </div>
-  </div>
+        </select>
+        <button type="submit" class="btn btn-secondary mt-2">Filtrar</button>
+      </div>
+    </form>
+  }
+
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Paciente</th>
+        <th>Dentista</th>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var examRequest in Model.Exams)
+      {
+        <tr>
+          <td>@examRequest.Patient</td>
+          <td>@examRequest.Dentist</td>
+          <td>@examRequest.Type</td>
+          <td>@examRequest.RequestDate.ToString("dd/MM/yyyy")</td>
+          <td>
+            @if (examRequest.Result == null)
+            {
+              <button class="btn btn-sm btn-secondary" disabled>Sem Resultado</button>
+            }
+            else
+            {
+              <a class="btn btn-primary btn-sm">Visualizar Resultado</a>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>
