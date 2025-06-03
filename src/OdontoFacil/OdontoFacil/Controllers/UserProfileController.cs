@@ -33,7 +33,7 @@ public partial class UserProfileControlle(OdontoFacilDbContext context) : Contro
             Name = user.Name,
             CPF = user.CPF,
             Email = user.Email,
-            Phone = user.PhoneNumber,
+            
             DateOfBirth = user.Patient.DateOfBirth,
             Password = user.Password
         };

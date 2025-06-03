@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace OdontoFacil.Controllers
 {
-    [Authorize(Roles = UserTypes.Dentist + "," + UserTypes.ClassHelper)] // Aplica a autorização a toda a controller
+    [Authorize(Roles = UserTypes.Dentist + "," + UserTypes.ClassHelper)] 
     public class PatientsController(OdontoFacilDbContext context) : Controller
     {
         private readonly OdontoFacilDbContext _context = context;
