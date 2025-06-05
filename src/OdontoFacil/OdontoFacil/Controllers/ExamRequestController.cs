@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OdontoFacil.Constants;
@@ -7,6 +8,7 @@ using OdontoFacil.Models.Views;
 
 namespace OdontoFacil.Controllers;
 
+[Authorize(Roles = UserTypes.Dentist)]
 public partial class ExamRequestController : Controller
 {
     private OdontoFacilDbContext _context;
@@ -25,7 +27,7 @@ public partial class ExamRequestController : Controller
                 .ToListAsync();
 
         var types = await _context.ExamTypes.ToListAsync();
-        
+
         ViewBag.Users = users;
         ViewBag.Types = types;
 
@@ -39,11 +41,11 @@ public partial class ExamRequestController : Controller
         {
             var userId = GetAuthenticatedUserId();
 
-            if (ModelState.IsValid && userId != null) 
+            if (ModelState.IsValid && userId != null)
             {
 
                 var examRequest = new ExamRequest
-                {   
+                {
                     Id = Guid.NewGuid().ToString(),
                     PatientId = formData.PatientId,
                     Type = formData.TypeId,
@@ -63,6 +65,6 @@ public partial class ExamRequestController : Controller
     {
         return User.Claims.FirstOrDefault(claim => claim.Type == "UserId")?.Value;
     }
-    
+
 }
 
