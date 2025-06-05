@@ -17,32 +17,6 @@ table {
   font-size: 12px;
 }
 
-.patient-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-.patient-table thead th {
-  padding: 15px;
-  text-align: left;
-  font-weight: bold;
-}
-
-.patient-table td,
-.patient-table th {
-  border-bottom: 1px solid #c3c3c3;
-}
-
-.patient-table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.01);
-}
-
-.patient-table td {
-  padding: 15px;
-  color: #333;
-}
-
 td.actions {
   display: flex;
   gap: 5px;
@@ -62,7 +36,7 @@ td.actions {
   width: fit-content;
 }
 
-.create-dentist-link {
+.create-exam-request-link {
   text-decoration: none;
 }
 

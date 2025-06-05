@@ -3,7 +3,7 @@
 @model OdontoFacil.Models.Views.ExamViewModel
 
 @{
-  ViewData["Title"] = "Agendar atendimento";
+  ViewData["Title"] = "Exames";
 
   bool ShouldAllowUserIdChoice()
   {
@@ -27,7 +27,7 @@
     <form method="get">
       <div class="form-group mt-2 select-container">
         <label for="UserId">Filtrar por paciente:</label>
-        <select name="userId" class="form-control mt-1" autocomplete="off">
+        <select asp-for="UserId" class="form-control mt-1" autocomplete="off">
           <option value="">Todos os pacientes</option>
           @foreach (var user in ViewBag.Users)
           {
