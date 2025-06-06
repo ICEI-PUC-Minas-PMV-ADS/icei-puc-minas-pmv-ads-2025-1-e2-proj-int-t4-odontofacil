@@ -34,7 +34,7 @@ public class LoginController : Controller
             return View(formData);
         }
 
-        var user = await GetUser(formData.Email.Trim());
+        var user = await GetUser(formData.Email.Trim().ToLower());
 
         if (user == null || !BCrypt.Net.BCrypt.Verify(formData.Password, user.Password))
         {

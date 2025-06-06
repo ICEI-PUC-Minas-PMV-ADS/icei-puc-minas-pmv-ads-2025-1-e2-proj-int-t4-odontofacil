@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using OdontoFacil.Models.Data;
 
 namespace OdontoFacil.Data;
@@ -49,11 +49,6 @@ public partial class OdontoFacilDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder
-            .HasPostgresEnum("DiaSemana", ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"])
-            .HasPostgresEnum("Sexo", ["masculino", "feminino"])
-            .HasPostgresEnum("Tipo_Antecedente", ["hereditario", "proprio"])
-            .HasPostgresEnum("Tipo_usuario", ["dentista", "paciente", "auxiliar"]);
 
         modelBuilder.Entity<Dentist>(entity =>
         {
