@@ -50,6 +50,14 @@ public class LoginController : Controller
 
     }
 
+    [HttpGet]
+    [Route("/Logout")]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return Redirect("/");
+    }
+
     private async Task<User?> GetUser(string email)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
