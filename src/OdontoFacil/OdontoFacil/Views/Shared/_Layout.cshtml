@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using OdontoFacil.Constants
+@using System.Security.Claims;
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,34 +17,29 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OdontoFacil</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <img src="~/img/logo.png" />
+        <a class="logout-button" href="/Logout">Sair ➤</a>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <nav class="nav-bar">
+            @if (User.IsInRole(UserTypes.Dentist) || User.IsInRole(UserTypes.Helper))
+            {
+                <a class="nav-button" href="/Pacientes">Pacientes</a>
+                <a class="nav-button" href="/Prontuario">Prontuário</a>
+            }
+            else
+            {
+                <a class="nav-button" href="/Perfil">Perfil</a>
+            }
+            <a class="nav-button" href="/Agendar">Agendar</a>
+            <a class="nav-button" href="/Agendamentos">Agendamentos</a>
+            <a class="nav-button" href="/Exames">Exames</a>
+        </nav>
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - OdontoFacil - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-inputmask/dist/jquery.inputmask.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
