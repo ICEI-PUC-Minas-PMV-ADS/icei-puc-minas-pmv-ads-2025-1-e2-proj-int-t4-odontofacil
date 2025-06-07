@@ -48,6 +48,7 @@ namespace OdontoFacil.Controllers
 
         [HttpGet]
         [Route("Paciente/{patientId}/Editar")]
+        [Authorize]
         public async Task<IActionResult> Edit(string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
@@ -73,6 +74,7 @@ namespace OdontoFacil.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Paciente/{patientId}/Editar")]
+        [Authorize]
         public async Task<IActionResult> Update(string patientId, UpdatePatientViewModel model)
         {
             if (string.IsNullOrWhiteSpace(patientId) || model == null)
