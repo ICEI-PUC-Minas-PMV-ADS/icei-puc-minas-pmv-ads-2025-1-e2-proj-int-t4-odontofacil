@@ -1,0 +1,26 @@
+.form-container {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-background {
+  padding: 32px;
+  border-radius: 36px;
+  background-color: #fff;
+}
+
+.page-title {
+  margin-bottom: 46px;
+}
+
+.page-title h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.save-button {
+  background-color: #3e7353;
+  border: none;
+}
