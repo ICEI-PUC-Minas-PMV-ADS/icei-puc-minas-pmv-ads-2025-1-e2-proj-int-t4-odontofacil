@@ -3,9 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using OdontoFacil.Constants;
 using OdontoFacil.Models.Views;
-using OdontoFacil.Models.Data;
 using OdontoFacil.Data;
-using System.Linq;
 
 namespace OdontoFacil.Controllers
 {
@@ -30,10 +28,10 @@ namespace OdontoFacil.Controllers
                 Age = CalculateAge(p.DateOfBirth)
             }).ToList();
 
-            return View("List", patientListViewModels); // Especifica o nome da View
+            return View("List", patientListViewModels); 
         }
 
-        // GET: PATIENTS
+        
         [Route("Paciente/{id}")]
         [HttpGet]
         public ActionResult Index(string id)

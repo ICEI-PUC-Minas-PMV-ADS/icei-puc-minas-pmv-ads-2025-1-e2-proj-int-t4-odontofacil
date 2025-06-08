@@ -1,8 +1,5 @@
-using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OdontoFacil.Constants;
 using OdontoFacil.Data;
 using OdontoFacil.Models.Views;
 
@@ -10,10 +7,10 @@ namespace OdontoFacil.Controllers;
 public partial class DentistController : Controller
 {
 
-  private OdontoFacilDbContext _context;
+    private readonly OdontoFacilDbContext _context;
 
-  public DentistController(OdontoFacilDbContext context)
-  {
+    public DentistController(OdontoFacilDbContext context)
+    {
     _context = context;
   }
 
@@ -127,7 +124,7 @@ public partial class DentistController : Controller
       return View(formData);
     }
 
-    var dentist = formData.toEntity();
+    var dentist = formData.ToEntity();
 
     try
     {

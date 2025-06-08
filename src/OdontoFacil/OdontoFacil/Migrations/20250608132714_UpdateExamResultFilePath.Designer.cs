@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OdontoFacil.Data;
 
@@ -11,9 +12,11 @@ using OdontoFacil.Data;
 namespace OdontoFacil.Migrations
 {
     [DbContext(typeof(OdontoFacilDbContext))]
-    partial class OdontoFacilDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250608132714_UpdateExamResultFilePath")]
+    partial class UpdateExamResultFilePath
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

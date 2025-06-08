@@ -9,7 +9,7 @@ using OdontoFacil.Models.Views;
 namespace OdontoFacil.Controllers;
 
 [Authorize(Roles = UserTypes.Patient)]
-public partial class UserProfileControlle(OdontoFacilDbContext context) : Controller
+public partial class UserProfileController(OdontoFacilDbContext context) : Controller
 {
 
     private readonly OdontoFacilDbContext _context = context;

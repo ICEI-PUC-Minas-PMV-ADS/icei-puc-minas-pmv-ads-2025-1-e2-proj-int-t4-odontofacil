@@ -1,0 +1,4 @@
+﻿
+internal static class ProgramHelpers
+{
+}

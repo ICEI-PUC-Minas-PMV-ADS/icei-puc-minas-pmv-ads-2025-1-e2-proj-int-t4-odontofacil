@@ -1,0 +1,199 @@
+﻿@model OdontoFacil.Models.Views.AttachExamResultViewModel
+
+@{
+    ViewData["Title"] = "Anexar Resultado de Exame";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+
+    @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.SuccessMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @ViewBag.ErrorMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form asp-controller="ExamResult" asp-action="Attach" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="card p-4 shadow-sm">
+            @if (Model.LoggedUserType == OdontoFacil.Constants.UserTypes.Patient)
+            {
+                <div class="form-group mb-3">
+                    <label asp-for="PatientId" class="form-label"></label>
+                    <input asp-for="PatientId" class="form-control" readonly />
+                    <span asp-validation-for="PatientId" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <div class="form-group mb-3">
+                    <label asp-for="PatientId" class="form-label"></label>
+                    <select asp-for="PatientId" asp-items="@Model.AvailablePatients" class="form-select" id="patientSelect">
+                        <option value="">-- Selecione o Paciente --</option>
+                    </select>
+                    <span asp-validation-for="PatientId" class="text-danger"></span>
+                </div>
+            }
+
+            <div class="form-group mb-3">
+                <label asp-for="ExamRequestId" class="form-label"></label>
+                <select asp-for="ExamRequestId" asp-items="@Model.AvailableExamRequests" class="form-select" id="examRequestSelect">
+                    <option value="">-- Selecione uma Solicitação de Exame --</option>
+                </select>
+                <span asp-validation-for="ExamRequestId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ExamTypeDescription" class="form-label"></label>
+                <input asp-for="ExamTypeDescription" class="form-control" readonly />
+                <span asp-validation-for="ExamTypeDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ResultDate" class="form-label"></label>
+                <input asp-for="ResultDate" type="date" class="form-control" />
+                <span asp-validation-for="ResultDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Lab" class="form-label"></label>
+                <input asp-for="Lab" class="form-control" placeholder="Nome do Laboratório" />
+                <span asp-validation-for="Lab" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="ResultFile" class="form-label"></label>
+                <input asp-for="ResultFile" type="file" class="form-control" />
+                <span asp-validation-for="ResultFile" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Anexar Resultado</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            var patientSelect = $('#patientSelect');
+            var examRequestSelect = $('#examRequestSelect');
+            var examTypeDescriptionInput = $('#ExamTypeDescription');
+
+            function loadExamRequests(patientId) {
+                examRequestSelect.empty();
+                examRequestSelect.append('<option value="">-- Selecione uma Solicitação de Exame --</option>');
+                
+                if ('@Model.LoggedUserType' !== '@OdontoFacil.Constants.UserTypes.Patient') {
+                    examTypeDescriptionInput.val('');
+                }
+
+
+                if (patientId) {
+                    $.ajax({
+                        url: '@Url.Action("GetExamRequestsByPatientId", "ExamResult")',
+                        type: 'GET',
+                        data: { patientId: patientId },
+                        success: function (data) {
+                            $.each(data, function (i, request) {
+                                examRequestSelect.append($('<option>', {
+                                    value: request.id,
+                                    text: request.text,
+                                    'data-exam-type-description': request.examTypeDescription
+                                }));
+                            });
+                            
+                            var selectedRequestId = examRequestSelect.val();
+                            if (selectedRequestId) {
+                                var selectedOption = examRequestSelect.find('option:selected');
+                                var examTypeDescription = selectedOption.data('exam-type-description');
+                                if (examTypeDescription) {
+                                    examTypeDescriptionInput.val(examTypeDescription);
+                                }
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Erro ao carregar solicitações de exame:", error);
+                        }
+                    });
+                }
+            }
+
+            if (patientSelect.length) {
+                patientSelect.on('change', function () {
+                    var selectedPatientId = $(this).val();
+                    loadExamRequests(selectedPatientId);
+                });
+            }
+
+            examRequestSelect.on('change', function () {
+                var selectedOption = $(this).find('option:selected');
+                var examTypeDescription = selectedOption.data('exam-type-description');
+
+                if (examTypeDescription) {
+                    examTypeDescriptionInput.val(examTypeDescription);
+                } else {
+                    examTypeDescriptionInput.val('');
+                }
+            });
+
+            
+        @if (Model.LoggedUserType == OdontoFacil.Constants.UserTypes.Patient)
+        {
+            <text>
+                        var patientIdForPatient = '@Model.PatientId';
+                        loadExamRequests(patientIdForPatient);
+            </text>
+        }
+
+                
+                
+        @if (Model.LoggedUserType == OdontoFacil.Constants.UserTypes.Patient && !string.IsNullOrEmpty(Model.ExamRequestId))
+        {
+            <text>
+                                // Espera as opções de solicitação serem carregadas
+                        $(document).ajaxStop(function() {
+                                    var selectedOption = examRequestSelect.find('option[value="' + '@Model.ExamRequestId' + '"]');
+                        if (selectedOption.length) {
+                            examRequestSelect.val('@Model.ExamRequestId'); 
+                        var examTypeDescription = selectedOption.data('exam-type-description');
+                        if (examTypeDescription) {
+                            examTypeDescriptionInput.val(examTypeDescription);
+                                        }
+                                    }
+                                });
+            </text>
+        }
+                
+        @if (Model.LoggedUserType != OdontoFacil.Constants.UserTypes.Patient && !string.IsNullOrEmpty(Model.PatientId) && !string.IsNullOrEmpty(Model.ExamRequestId))
+        {
+            <text>
+                                
+                        loadExamRequests('@Model.PatientId');
+                        
+                        $(document).ajaxStop(function() {
+                                    var selectedOption = examRequestSelect.find('option[value="' + '@Model.ExamRequestId' + '"]');
+                        if (selectedOption.length) {
+                            examRequestSelect.val('@Model.ExamRequestId'); 
+                        var examTypeDescription = selectedOption.data('exam-type-description');
+                        if (examTypeDescription) {
+                            examTypeDescriptionInput.val(examTypeDescription);
+                                        }
+                                    }
+                                });
+            </text>
+        }
+                });
+    </script>
+}

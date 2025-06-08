@@ -1,0 +1,95 @@
+﻿@model IEnumerable<OdontoFacil.Models.Views.ExamResultListViewModel>
+
+@{
+    ViewData["Title"] = "Resultados de Exame";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PatientName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PatientCPF)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExamTypeDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RequestDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ResultDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lab)
+                    </th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PatientName)
+                            </td>
+                            <td>
+                                @FormatCPF(item.PatientCPF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ExamTypeDescription)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RequestDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ResultDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lab)
+                            </td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.ResultFilePath))
+                                {
+                                    <a asp-controller="ExamResult" asp-action="DownloadResult" asp-route-id="@item.Id"
+                                       class="btn btn-primary btn-sm" title="Visualizar ou Baixar">
+                                        <i class="bi bi-eye"></i> Visualizar/Baixar
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center">Nenhum resultado de exame encontrado.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@functions {
+    public String FormatCPF(String cpf)
+    {
+        if (string.IsNullOrEmpty(cpf) || cpf.Length != 11)
+        {
+            return cpf;
+        }
+        return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
+    }
+}
