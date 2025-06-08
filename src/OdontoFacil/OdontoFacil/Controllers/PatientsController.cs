@@ -49,7 +49,6 @@ namespace OdontoFacil.Controllers
 
         [HttpGet]
         [Route("Paciente/{patientId}/Editar")]
-        [Authorize]
         public async Task<IActionResult> Edit(string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
