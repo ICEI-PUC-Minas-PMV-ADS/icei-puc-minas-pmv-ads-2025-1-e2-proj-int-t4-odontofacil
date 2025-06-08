@@ -11,6 +11,7 @@ using OdontoFacil.Data;
 namespace OdontoFacil.Controllers
 
 {
+    [Authorize(Roles = $"{UserTypes.Dentist},{UserTypes.Helper}")]
     public class PatientsController(OdontoFacilDbContext context) : Controller
     {
         private readonly OdontoFacilDbContext _context = context;
@@ -74,7 +75,6 @@ namespace OdontoFacil.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Paciente/{patientId}/Editar")]
-        [Authorize]
         public async Task<IActionResult> Update(string patientId, UpdatePatientViewModel model)
         {
             if (string.IsNullOrWhiteSpace(patientId) || model == null)

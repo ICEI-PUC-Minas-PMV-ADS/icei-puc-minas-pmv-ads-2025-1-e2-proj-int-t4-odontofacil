@@ -91,7 +91,7 @@ namespace OdontoFacil.Models.Views
     public string Number { get; set; }
 
     [Display(Name = "Complemento")]
-    public string Complement { get; set; }
+    public string? Complement { get; set; }
 
     [Display(Name = "Bairro")]
     [Required(ErrorMessage = "O bairro é obrigatório")]
