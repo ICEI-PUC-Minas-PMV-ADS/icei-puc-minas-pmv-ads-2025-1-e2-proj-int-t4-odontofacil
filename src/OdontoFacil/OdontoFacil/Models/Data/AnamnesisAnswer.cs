@@ -3,10 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OdontoFacil.Models.Data;
 
-[PrimaryKey(nameof(QuestionId), nameof(PatientId))]
+[PrimaryKey(nameof(Id))]
 [Table(name: "Resposta_Anamnese")]
 public partial class AnamnesisAnswer
 {
+    [Column(name: "id")]
+    public string Id { get; set; } = null!;
+
     [Column(name: "id_pergunta")]
     [ForeignKey(nameof(Dentist))]
     public string QuestionId { get; set; } = null!;

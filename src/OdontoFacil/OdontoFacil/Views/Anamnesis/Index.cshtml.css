@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #eaf6ea;
+    padding-top: 150px;
+}
+
+.top-menu {
+    background-color: #eaf6ea;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.menu-btn {
+    background-color: #2f6932;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .menu-btn:hover {
+        background-color: #245426;
+    }
+
+.page-container {
+    padding: 0 40px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+}
+
+.left-panel {
+    flex: 2;
+}
+
+.right-panel {
+    width: 400px;
+}
+
+.c1 {
+    font-size: 14px;
+    width: 100%;
+    height: 49px;
+    padding: 8px 15px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 16px;
+}
+
+textarea {
+    width: 400px;
+    height: 570px;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid #000;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.resposta-opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+    .resposta-opcao input[type="text"] {
+        width: 200px;
+        border: none;
+    }
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.botoes {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn {
+    background-color: #2f6932;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+h2, obs {
+    font-size: 16px;
+}
