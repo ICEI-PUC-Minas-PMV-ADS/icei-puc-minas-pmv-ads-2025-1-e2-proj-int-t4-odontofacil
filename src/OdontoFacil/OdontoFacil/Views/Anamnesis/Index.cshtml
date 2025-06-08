@@ -1,0 +1,38 @@
+﻿@model OdontoFacil.Models.Views.AnamneseViewModel
+
+@{
+    ViewData["Title"] = "Anamnese";
+}
+    <form asp-action="SalvarAnamnese" method="post">
+        <input type="hidden" name="PacienteId" value="@Model.PacienteId" /> 
+        <div class="page-container">
+            <div class="card">
+                <h2>Anamnese</h2>
+                <div class="form-container">
+                <div class="left-panel">
+             
+                        @for (int i = 0; i < Model.Perguntas.Count; i++)
+                        {
+                            <div class="form-group">
+                                <div class="resposta-opcao">
+                                    @Model.Perguntas[i].Descricao
+                                     <label><input type="radio" asp-for="@Model.Perguntas[i].Resposta" value="true" /> Sim</label> 
+                                    <label><input type="radio" asp-for="@Model.Perguntas[i].Resposta" value="false" /> Não</label> 
+                                    <label>
+                                        Qual?
+                                        <input type="text" asp-for="@Model.Perguntas[i].RespostaTextual" placeholder="Digite aqui..." />
+                                    </label>
+                                    <input type="hidden" asp-for="@Model.Perguntas[i].Id"/>
+                                    <input type="hidden" asp-for="@Model.Perguntas[i].PerguntaId" />
+                                </div>
+                                <hr />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="botoes">
+                    <button type="submit" class="btn btn-primary">Salvar</button> 
+                </div>
+    </form>
