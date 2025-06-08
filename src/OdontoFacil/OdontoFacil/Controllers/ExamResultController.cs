@@ -214,12 +214,12 @@ public class ExamResultController : Controller
         var viewModelList = examResults.Select(er => new ExamResultListViewModel
         {
             Id = er.Id,
-            PatientName = er.ExamRequest.Patient.User.Name,
-            PatientCPF = er.ExamRequest.Patient.User.CPF,
-            ExamTypeDescription = er.ExamRequest.TypeNavigation.Description,
-            RequestDate = er.ExamRequest.RequestDate,
+            PatientName = er.ExamRequest?.Patient.User.Name ?? "N/A",
+            PatientCPF = er.ExamRequest?.Patient.User.CPF ?? "N/A",
+            ExamTypeDescription = er.ExamRequest?.TypeNavigation.Description ?? "N/A",
+            RequestDate = er.ExamRequest?.RequestDate ?? DateOnly.MinValue,
             ResultDate = er.Date,
-            Lab = er.Lab,
+            Lab = er.Lab ?? "N/A",
             ResultFilePath = er.ResultFilePath
         }).ToList();
 
