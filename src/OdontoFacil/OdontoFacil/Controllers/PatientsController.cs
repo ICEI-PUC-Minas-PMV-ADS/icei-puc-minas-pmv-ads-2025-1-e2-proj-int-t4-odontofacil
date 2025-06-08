@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using OdontoFacil.Constants;
 using OdontoFacil.Models.Views;
 using OdontoFacil.Data;
+using OdontoFacil.Models.Data;
 
 namespace OdontoFacil.Controllers
 {
@@ -63,7 +64,7 @@ namespace OdontoFacil.Controllers
             return View(viewModel);
         }
 
-        }
+        
 
         [HttpGet]
         [Route("Paciente/{patientId}/Editar")]
