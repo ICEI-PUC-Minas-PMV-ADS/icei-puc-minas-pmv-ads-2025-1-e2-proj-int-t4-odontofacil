@@ -34,7 +34,7 @@ public class LoginController : Controller
             return View(formData);
         }
 
-        var user = await GetUser(formData.Email.Trim());
+        var user = await GetUser(formData.Email.Trim().ToLower());
 
         if (user == null || !BCrypt.Net.BCrypt.Verify(formData.Password, user.Password))
         {
@@ -48,6 +48,14 @@ public class LoginController : Controller
 
         return Redirect(redirectPath);
 
+    }
+
+    [HttpGet]
+    [Route("/Logout")]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return Redirect("/");
     }
 
     private async Task<User?> GetUser(string email)

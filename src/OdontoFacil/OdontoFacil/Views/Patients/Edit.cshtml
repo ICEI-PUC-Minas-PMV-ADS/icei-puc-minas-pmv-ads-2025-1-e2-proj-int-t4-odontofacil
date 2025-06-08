@@ -1,0 +1,154 @@
+@model OdontoFacil.Models.Views.UpdatePatientViewModel
+
+@{
+  ViewData["Title"] = "Atualizar Paciente";
+}
+
+<div class="row justify-content-center form-container">
+  <div class="col-12 col-md-10">
+    <form asp-controller="Patients" asp-action="Update" asp-route-patientId="@Model.Id" method="post" class="mt-4">
+      <div class="form-background">
+        <div class="page-title">
+          <h1>Prontuário</h1>
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+
+
+        <div class="row mb-3">
+          <div class="col-12">
+            <label asp-for="Name" class="form-label">Nome Completo</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for=" Email" class="text-danger"></span>
+          </div>
+          <div class="col-md-4">
+            <label asp-for="PhoneNumber" class="form-label">Telefone</label>
+            <input asp-for="PhoneNumber" class="form-control" id="phone" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+          </div>
+          <div class="col-md-4">
+            <label asp-for="Sex" class="form-label">Sexo</label>
+            <select asp-for="Sex" class="form-control">
+              <option value="">Selecione...</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+            <span asp-validation-for="Sex" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label asp-for="CPF" class="form-label">CPF</label>
+            <input asp-for="CPF" class="form-control" id="cpf" />
+            <span asp-validation-for="CPF" class="text-danger"></span>
+          </div>
+          <div class="col-md-6">
+            <label asp-for="DateOfBirth" class="form-label">Data de Nascimento</label>
+            <input asp-for="DateOfBirth" type="date" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label asp-for="CEP" class="form-label">CEP</label>
+            <input asp-for="CEP" class="form-control" id="cep" />
+            <span asp-validation-for="CEP" class="text-danger"></span>
+          </div>
+          <div class="col-md-6">
+            <label asp-for="Street" class="form-label">Rua</label>
+            <input asp-for="Street" class="form-control" />
+            <span asp-validation-for="Street" class="text-danger"></span>
+          </div>
+          <div class="col-md-3">
+            <label asp-for="Number" class="form-label">Número</label>
+            <input asp-for="Number" class="form-control" />
+            <span asp-validation-for="Number" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label asp-for="Complement" class="form-label">Complemento</label>
+            <input asp-for="Complement" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label asp-for="Neighborhood" class="form-label">Bairro</label>
+            <input asp-for="Neighborhood" class="form-control" />
+            <span asp-validation-for="Neighborhood" class="text-danger"></span>
+          </div>
+          <div class="col-md-4">
+            <label asp-for="City" class="form-label">Cidade</label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label asp-for="State" class="form-label">Estado</label>
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for="State" class="text-danger"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label asp-for="HealthPlanId" class="form-label">Convênio</label>
+            <select asp-for="HealthPlanId" class="form-control"
+              asp-items="@(new SelectList(ViewBag.HealthPlans, "Id", "Name"))">
+              <option value="">Selecione um plano...</option>
+            </select>
+            <span asp-validation-for="HealthPlanId" class="text-danger"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary" onclick="history.back()">Cancelar</button>
+          <input type="submit" value="Salvar" class="btn btn-primary save-button" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+@section Scripts {
+  @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+  }
+
+  <script>
+    $(document).ready(function () {
+      $("#cpf").inputmask("999.999.999-99");
+      $("#phone").inputmask("(99) 99999-9999");
+      $("#cep").inputmask("99999-999");
+
+      // Busca de CEP automática
+      $("#cep").blur(function () {
+        var cep = $(this).val().replace(/\D/g, '');
+
+        if (cep.length === 8) {
+          $.getJSON(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+            if (!data.erro) {
+              $("#Street").val(data.logradouro);
+              $("#Neighborhood").val(data.bairro);
+              $("#City").val(data.localidade);
+              $("#State").val(data.uf);
+            }
+          });
+        }
+      });
+    });
+  </script>
+}
