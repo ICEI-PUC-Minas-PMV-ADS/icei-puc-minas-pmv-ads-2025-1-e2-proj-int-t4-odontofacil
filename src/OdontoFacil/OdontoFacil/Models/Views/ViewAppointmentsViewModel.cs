@@ -30,7 +30,7 @@ public class ViewAppointmentsViewModel
     public DateOnly Date { get; set; }
 
     [Display(Name = "hora")]
-    public TimeOnly Time { get; set; }
+    public TimeOnly Hour { get; set; }
 
     [Display(Name = "Anotação")]
     public string PatientNote { get; set; } = null!;

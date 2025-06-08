@@ -2,13 +2,21 @@
 @using OdontoFacil.Models.Data 
 
 @{
-    @*Layout aqui*@
+    ViewData["Title"] = "MEUS PACIENTES";
     var dentistName = Model.FirstOrDefault().DentistName;
 }
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
 <div>
     <h3><strong>DENTISTA: @dentistName</strong></h3>
 
-    <h4>MEUS PACIENTES</h4>
+    <h4>@ViewData["Title"]</h4>
 
     @if (Model != null && Model.Any())
     {
@@ -26,7 +34,7 @@
                 @foreach (var appointmentViewModel in Model)
                 {
                     <tr>
-                        <td>@appointmentViewModel.Time.ToString("HH:mm")</td>
+                        <td>@appointmentViewModel.Hour.ToString("HH:mm")</td>
                         <td>@appointmentViewModel.Date.ToString("dd/MM/yyyy")</td>
                         <td>@appointmentViewModel.PatientName</td>
                         <td>@appointmentViewModel.Age</td>

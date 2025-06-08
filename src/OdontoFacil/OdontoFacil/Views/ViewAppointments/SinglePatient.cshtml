@@ -2,12 +2,20 @@
 @using OdontoFacil.Models.Data 
 
 @{
-    @*Layout aqui*@
+    ViewData["Title"] = "MEUS AGENDAMENTOS";
 }
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
 <div>
     <h3><strong>PACIENTE: @Model.PatientName (IDADE: @Model.Age)</strong></h3>
 
-    <h4>MEUS AGENDAMENTOS</h4>
+    <h4>@ViewData["Title"]</h4>
     @if (Model.Appointment != null && Model.Appointment.Any())
     {
         <table class="table">
@@ -23,11 +31,11 @@
                 @foreach (var appointment in Model.Appointment)
                 {
                     <tr>
-                        <td>@appointment.Time.ToString("HH:mm")</td>
+                        <td>@appointment.Hour.ToString("HH:mm")</td>
                         <td>@appointment.Date.ToString("dd/MM/yyyy")</td>
                         <td>@(appointment.Dentist?.User?.Name ?? "N/A")</td>
                         <td>
-                            <form asp-controller="Patients" asp-action="Delete" method="post" asp-route-appointmentId="@appointment.Id" asp-route-patientIdForRedirect="@Model.PatientId" style="display:inline;">
+                            <form asp-controller="ViewAppointments" asp-action="Delete" method="post" asp-route-appointmentId="@appointment.Id" asp-route-patientIdForRedirect="@Model.PatientId" style="display:inline;">
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja cancelar este agendamento?')">
                                     Cancelar
                                 </button>
