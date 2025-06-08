@@ -32,6 +32,7 @@ public partial class ExamController : Controller
     IQueryable<ExamRequest> query = _context.ExamRequests
         .Include(e => e.Dentist.User)
         .Include(e => e.Patient.User)
+        .Include(e => e.Result)
         .Include(e => e.TypeNavigation);
 
     if (currentUser.UserType == UserTypes.Patient)
