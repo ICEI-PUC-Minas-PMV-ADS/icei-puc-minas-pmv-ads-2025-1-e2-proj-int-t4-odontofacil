@@ -4,7 +4,6 @@
 
 @{
     ViewData["Title"] = "TODOS OS AGENDAMENTOS";
-    @*Layout aqui*@
     string currentDentistId = null;
     if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("dentista")) 
     {
@@ -12,6 +11,12 @@
     }
 }
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
 
 <div>
     <h3>@ViewData["Title"]</h3>
@@ -39,7 +44,7 @@
             <thead>
                 <tr>
                     <th>
-                        <a asp-controller="ViewAppointments" asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParam"]">Horário @Html.Raw(ViewData["TimeSortIcon"])</a>
+                        <a asp-controller="ViewAppointments" asp-action="Index" asp-route-sortOrder="@ViewData["HourSortParam"]">Horário @Html.Raw(ViewData["HourSortIcon"])</a>
                     </th>
                     <th>
                         <a asp-controller="ViewAppointments" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParam"]">Data @Html.Raw(ViewData["DateSortIcon"])</a>
@@ -54,7 +59,7 @@
                 @foreach (var appointment in Model)
                 {
                     <tr>
-                        <td>@(appointment.Time.ToString("HH:mm"))</td>
+                        <td>@(appointment.Hour.ToString("HH:mm"))</td>
                         <td>@(appointment.Date.ToString("dd/MM/yyyy"))</td>
                         <td>@appointment.PatientName</td>
                         <td>@appointment.Age</td>

@@ -8,12 +8,10 @@ namespace OdontoFacil.Models.Views;
 public class ViewAppointmentsViewModel
 
 {
-    public Patient? Patient { get; set; } 
-    public List<Note> Note { get; set; } = [];
+    public Patient? Patient { get; set; }
     public Dentist? Dentist { get; set; }
-    public Appointment? Appointment { get; set; }
+    public List<Appointment> Appointment { get; set; }
     public User? User { get; set; }
-    public string? Id { get; set; } = null!;
 
     [Display(Name = "Nome completo")]
     [Required(ErrorMessage = "O campo nome é obrigatório.")]
@@ -28,16 +26,10 @@ public class ViewAppointmentsViewModel
     public int Age { get; set; }
 
     [Display(Name = "data")]
-    public DateOnly? Date { get; set; }
+    public DateOnly Date { get; set; }
 
     [Display(Name = "hora")]
-    public TimeOnly Time { get; set; }
-
-    [Display(Name = "Anotação")]
-    public string PatientNote { get; set; } = null!;
-
-    [Display(Name = "Conteúdo")]
-    public string ContentNote { get; set; } = null!;
+    public TimeOnly Hour { get; set; }
 
     [Display(Name = "Dentista ID")]
     public string DentistId { get; set; } = null!;
@@ -51,7 +43,8 @@ public class ViewAppointmentsViewModel
     [Display(Name = "Nome do Dentista")]
     public string? DentistName { get; set; } = null!;
 
-    [Display(Name = "Atendimento ID")]
+    [Display(Name = "Agendamento ID")]
+
     public string? AppointmentId { get; set; } = null!;
 
     public string? Id { get; set; } = null!;

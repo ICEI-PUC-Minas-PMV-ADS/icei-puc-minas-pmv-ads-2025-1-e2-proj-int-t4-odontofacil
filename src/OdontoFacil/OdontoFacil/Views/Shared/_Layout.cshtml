@@ -31,7 +31,18 @@
                 <a class="nav-button" href="/Perfil">Perfil</a>
             }
             <a class="nav-button" href="/Agendar">Agendar</a>
-            <a class="nav-button" href="/Agendamentos">Agendamentos</a>
+            @if (User.IsInRole(UserTypes.Patient))
+            {
+                var userId = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    <a class="nav-button" href="/Agendamentos/@userId">Agendamentos</a>
+                }
+            }
+            else 
+            {
+                <a class="nav-button" href="/Agendamentos">Agendamentos</a>
+            }
             <a class="nav-button" href="/Exames">Pedidos de Exames</a>
             <a class="nav-button" href="/ExamResult/ListarResultados">Resultados de Exames</a>
             <a class="nav-button" href="/ExamResult/AnexarResultado">Enviar Resultados</a>

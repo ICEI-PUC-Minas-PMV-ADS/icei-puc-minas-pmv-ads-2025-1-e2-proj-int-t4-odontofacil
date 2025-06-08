@@ -20,7 +20,7 @@ namespace OdontoFacil.Controllers
         private readonly OdontoFacilDbContext _context = context;
 
         [Authorize(Roles = $"{UserTypes.Dentist}, {UserTypes.Helper}")]
-        [Route("Paciente")]
+        [Route("/Agendamentos")]
         [HttpGet]
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
@@ -57,7 +57,7 @@ namespace OdontoFacil.Controllers
                     {
                         AppointmentId = appointment.Id,
                         Date = appointment.Date,
-                        Time = appointment.Time,
+                        Hour = appointment.Hour,
                         DentistName = appointment.Dentist?.User?.Name,
                         PatientName = patient.User?.Name,
                         Age = CalculateAge(patient.DateOfBirth), 
@@ -68,8 +68,8 @@ namespace OdontoFacil.Controllers
 
             string nextSortOrderForDate = "date_asc";
             string dateSortIconHtml ="";
-            string nextSortOrderForTime = "time_asc";
-            string timeSortIconHtml = "";
+            string nextSortOrderForHour = "Hour_asc";
+            string HourSortIconHtml = "";
 
             IEnumerable<ViewAppointmentsViewModel> sortedAppointments = allAppointmentsViewModel;
 
@@ -77,7 +77,7 @@ namespace OdontoFacil.Controllers
             {
                 sortedAppointments = allAppointmentsViewModel
                                         .OrderByDescending(vm => vm.Date)
-                                        .ThenByDescending(vm => vm.Time)
+                                        .ThenByDescending(vm => vm.Hour)
                                         .ThenBy(vm => vm.PatientName);
                 dateSortIconHtml = "&#9660;";
                 nextSortOrderForDate = "date_asc";
@@ -86,35 +86,35 @@ namespace OdontoFacil.Controllers
             {
                 sortedAppointments = allAppointmentsViewModel
                                         .OrderBy(vm => vm.Date)
-                                        .ThenBy(vm => vm.Time)
+                                        .ThenBy(vm => vm.Hour)
                                         .ThenBy(vm => vm.PatientName);
                 dateSortIconHtml = "&#9650;";
                 nextSortOrderForDate = "date_desc";
             }
 
-            else if (sortOrder == "time_desc")
+            else if (sortOrder == "Hour_desc")
             {
                 sortedAppointments = allAppointmentsViewModel
-                                        .OrderByDescending(vm => vm.Time)
+                                        .OrderByDescending(vm => vm.Hour)
                                         .ThenByDescending(vm => vm.Date)
                                         .ThenBy(vm => vm.PatientName);
-                timeSortIconHtml = "&#9660;";
-                nextSortOrderForTime = "time_asc";
+                HourSortIconHtml = "&#9660;";
+                nextSortOrderForHour = "Hour_asc";
             }
-            else if (sortOrder == "time_asc")
+            else if (sortOrder == "Hour_asc")
             {
                 sortedAppointments = allAppointmentsViewModel
-                                        .OrderBy(vm => vm.Time)
+                                        .OrderBy(vm => vm.Hour)
                                         .ThenBy(vm => vm.Date)
                                         .ThenBy(vm => vm.PatientName);
-                timeSortIconHtml = "&#9650;";
-                nextSortOrderForTime = "time_desc"; 
+                HourSortIconHtml = "&#9650;";
+                nextSortOrderForHour = "Hour_desc"; 
             }
             else
             {
                 sortedAppointments = allAppointmentsViewModel
                                         .OrderBy(vm => vm.Date)
-                                        .ThenBy(vm => vm.Time)
+                                        .ThenBy(vm => vm.Hour)
                                         .ThenBy(vm => vm.PatientName);
                 dateSortIconHtml = "&#9650;";
                 nextSortOrderForDate = "date_desc";
@@ -122,14 +122,14 @@ namespace OdontoFacil.Controllers
 
             ViewData["DateSortParam"] = nextSortOrderForDate;
             ViewData["DateSortIcon"] = dateSortIconHtml;
-            ViewData["TimeSortParam"] = nextSortOrderForTime;
-            ViewData["TimeSortIcon"] = timeSortIconHtml;
+            ViewData["HourSortParam"] = nextSortOrderForHour;
+            ViewData["HourSortIcon"] = HourSortIconHtml;
           
             return View(sortedAppointments.ToList());
         }
 
         [Authorize(Roles = $"{UserTypes.Dentist}, {UserTypes.Helper}, {UserTypes.Patient}")]
-        [Route("Paciente/{id}")]
+        [Route("/Agendamentos/{id}")]
         [HttpGet]
         public async Task<IActionResult> SinglePatient(string id)
         {
@@ -165,7 +165,7 @@ namespace OdontoFacil.Controllers
                 .Include(a => a.Dentist)
                     .ThenInclude(d => d.User)
                 .OrderBy(a => a.Date)
-                .ThenBy(a => a.Time)
+                .ThenBy(a => a.Hour)
                 .ToListAsync();
 
             var viewModel = new ViewAppointmentsViewModel
@@ -183,7 +183,7 @@ namespace OdontoFacil.Controllers
         }
 
         [Authorize(Roles = UserTypes.Dentist)]
-        [Route("Paciente/Dentista/{id}")]
+        [Route("/Agendamentos/Dentista/{id}")]
         [HttpGet]
         public async Task<IActionResult> SingleDentist(string id)
         {
@@ -219,7 +219,7 @@ namespace OdontoFacil.Controllers
                 .Include(a => a.Patient)
                     .ThenInclude(p => p.User) 
                 .OrderBy(a => a.Date)
-                .ThenBy(a => a.Time)
+                .ThenBy(a => a.Hour)
                 .ToListAsync();
 
             var appointmentViewModel = new List<ViewAppointmentsViewModel>();
@@ -230,7 +230,7 @@ namespace OdontoFacil.Controllers
                 {
                     AppointmentId = appointment.Id,
                     Date = appointment.Date,
-                    Time = appointment.Time,
+                    Hour = appointment.Hour,
                     DentistId = dentist.Id,
                     DentistName = dentist.User?.Name,
                     PatientName = appointment.Patient?.User?.Name,
@@ -270,8 +270,6 @@ namespace OdontoFacil.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-
-
 
         private string? GetAuthenticatedUserId()
         {
