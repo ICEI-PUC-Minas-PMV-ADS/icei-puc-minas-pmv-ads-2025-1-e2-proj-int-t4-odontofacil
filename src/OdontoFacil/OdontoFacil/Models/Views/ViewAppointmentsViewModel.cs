@@ -5,15 +5,14 @@ using OdontoFacil.Models.Data;
 
 namespace OdontoFacil.Models.Views;
 
-public class PatientViewModel
-    
+public class ViewAppointmentsViewModel
+
 {
-    public Patient Patient { get; set; } 
-    public List<Note> Note { get; set; } 
+    public Patient? Patient { get; set; }
+    public List<Note> Note { get; set; }
     public Dentist Dentist { get; set; }
-    public Appointment Appointment { get; set; }
+    public List<Appointment> Appointment { get; set; }
     public User User { get; set; }
-    public string? Id { get; set; } = null!;
 
     [Display(Name = "Nome completo")]
     [Required(ErrorMessage = "O campo nome é obrigatório.")]
@@ -27,11 +26,11 @@ public class PatientViewModel
     [Display(Name = "Idade")]
     public int Age { get; set; }
 
-    [Display(Name = "Agendamentos")]
-    public string? Appointments { get; set; } = null!;
-
     [Display(Name = "data")]
     public DateOnly Date { get; set; }
+
+    [Display(Name = "hora")]
+    public TimeOnly Time { get; set; }
 
     [Display(Name = "Anotação")]
     public string PatientNote { get; set; } = null!;
@@ -44,5 +43,14 @@ public class PatientViewModel
 
     [Display(Name = "Paciente ID")]
     public string PatientId { get; set; } = null!;
-}
 
+    public string? PatientName { get; set; } = null!;
+
+    public string? DentistName { get; set; } = null!;
+
+    public string? AppointmentId { get; set; } = null!;
+
+    public string? Id { get; set; } = null!;
+
+    
+}
