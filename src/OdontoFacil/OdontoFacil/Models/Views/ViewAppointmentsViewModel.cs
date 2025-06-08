@@ -44,10 +44,13 @@ public class ViewAppointmentsViewModel
     [Display(Name = "Paciente ID")]
     public string PatientId { get; set; } = null!;
 
+    [Display(Name = "Nome do Paciente")]
     public string? PatientName { get; set; } = null!;
 
+    [Display(Name = "Nome do Dentista")]
     public string? DentistName { get; set; } = null!;
 
+    [Display(Name = "Atendimento ID")]
     public string? AppointmentId { get; set; } = null!;
 
     public string? Id { get; set; } = null!;
