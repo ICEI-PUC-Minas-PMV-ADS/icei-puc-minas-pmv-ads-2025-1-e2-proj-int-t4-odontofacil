@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations; 
+using System; 
 
 namespace OdontoFacil.Models.Data;
 
@@ -6,7 +8,7 @@ namespace OdontoFacil.Models.Data;
 public partial class ExamResult
 {
     [Column("id")]
-    public string Id { get; set; } = null!;
+    public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [ForeignKey(nameof(ExamRequest))]
     [Column("id_pedido_exame")]
@@ -17,6 +19,9 @@ public partial class ExamResult
 
     [Column("laboratorio")]
     public string Lab { get; set; } = null!;
+
+    [Column("caminho_arquivo_resultado")]
+    public string? ResultFilePath { get; set; }
 
     public virtual ExamRequest ExamRequest { get; set; } = null!;
 }

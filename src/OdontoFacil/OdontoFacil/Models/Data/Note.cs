@@ -22,14 +22,14 @@ public partial class Note
 
     [Column(name: "id_paciente")]
     [ForeignKey(nameof(Patient))]
-    public string PatientId { get; set; }
+    public required string PatientId { get; set; }
 
     [Column(name: "id_dentista")]
     [ForeignKey(nameof(Dentist))]
-    public string DentistId { get; set; }
+    public required string DentistId { get; set; }
 
-    public Patient Patient { get; set; }
+    public required Patient Patient { get; set; }
 
-    public Dentist Dentist { get; set; }
+    public required Dentist Dentist { get; set; }
 
 }

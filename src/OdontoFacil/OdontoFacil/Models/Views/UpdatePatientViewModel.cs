@@ -6,16 +6,15 @@ namespace OdontoFacil.Models.Views
 {
   public class UpdatePatientViewModel
   {
-    public UpdatePatientViewModel()
+        public UpdatePatientViewModel()
     {
     }
 
     public UpdatePatientViewModel(Patient patient)
     {
-      if (patient == null)
-        throw new ArgumentNullException(nameof(patient));
+            ArgumentNullException.ThrowIfNull(patient);
 
-      Id = patient.Id;
+            Id = patient.Id;
 
       if (patient.User != null)
       {
@@ -24,14 +23,14 @@ namespace OdontoFacil.Models.Views
         CPF = patient.User.CPF;
       }
 
-      PhoneNumber = patient.PhoneNumber;
+            PhoneNumber = patient.PhoneNumber;
 
       if (patient.DateOfBirth.HasValue)
         DateOfBirth = new DateTime(patient.DateOfBirth.Value.Year,
                                    patient.DateOfBirth.Value.Month,
                                    patient.DateOfBirth.Value.Day);
 
-      Sex = patient.Sex;
+            Sex = patient.Sex;
 
       if (patient.HealthPlan != null)
       {

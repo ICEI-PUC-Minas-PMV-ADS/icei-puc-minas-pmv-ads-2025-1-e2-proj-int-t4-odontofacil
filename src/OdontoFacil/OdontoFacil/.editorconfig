@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS8601: Possível atribuição de referência nula.
+dotnet_diagnostic.CS8601.severity = warning

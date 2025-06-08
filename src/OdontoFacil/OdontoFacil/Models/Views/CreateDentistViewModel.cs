@@ -33,7 +33,7 @@ public partial class CreateDentistViewModel
   [Required(ErrorMessage = "O campo CRO é obrigatório.")]
   public string CRO { get; set; } = null!;
 
-  public Dentist toEntity()
+    public Dentist ToEntity()
   {
     var dentist = new Dentist
     {
