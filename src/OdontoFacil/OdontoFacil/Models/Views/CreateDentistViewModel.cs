@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using OdontoFacil.Models.Data;
 using OdontoFacil.Constants;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OdontoFacil.Models.Views;
 
@@ -44,7 +45,7 @@ public partial class CreateDentistViewModel
         Name = this.Name,
         Email = this.Email,
         CPF = NumberOnly().Replace(this.CPF, ""),
-        Password = this.Password,
+        Password = BCrypt.Net.BCrypt.HashPassword(this.Password),
       }
     };
     return dentist;

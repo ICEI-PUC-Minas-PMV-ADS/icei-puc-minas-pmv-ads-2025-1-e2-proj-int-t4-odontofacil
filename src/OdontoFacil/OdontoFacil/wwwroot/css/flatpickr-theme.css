@@ -1,0 +1,21 @@
+.flatpickr-input:not(:disabled)[readonly] {
+    background-color: white;
+}
+
+.flatpickr-day {
+    border-radius: 6px !important;
+}
+
+.flatpickr-day.selected {
+    background-color: #3E7353 !important;
+    border-color: #3E7353 !important;
+}
+
+.flatpickr-calendar {
+    border-radius: 6px;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg, 
+.flatpickr-months .flatpickr-next-month:hover svg {
+    fill: #3E7353 !important;
+}

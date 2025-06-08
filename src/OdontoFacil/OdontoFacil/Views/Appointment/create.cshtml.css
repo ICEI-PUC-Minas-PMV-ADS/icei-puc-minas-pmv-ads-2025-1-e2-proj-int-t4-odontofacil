@@ -1,0 +1,60 @@
+.schedule-appointment-page{
+    .control-label {
+        font-size: 24px;
+    }
+}
+
+
+.select-container {
+    select {
+        appearance: base-select;
+        
+        &::picker(select) {
+            padding: 4px;
+            appearance: base-select;
+            border-radius: 6px;
+            border-color: #E4E4E7;
+            box-shadow: 1px 0 0 #e6e6e6,-1px 0 0 #e6e6e6,0 1px 0 #e6e6e6,0 -1px 0 #e6e6e6,0 3px 13px rgba(0,0,0,0.08);
+        }
+    }
+}
+
+.select-container{
+    option{
+        padding: 6px 8px;
+        border-radius: 6px;
+        margin-top: 2px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        &:focus{
+            background: #3E7353;
+            color: white;
+        }
+    }
+}
+
+.title{
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.button {
+    user-select: none;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    background-color: #3E7353;
+    transition: background-color 0.3s;
+    color: white;
+    margin-top: 16px;
+    border: none;
+    text-align: center;
+    width: fit-content;
+}
+
+
+.button:hover{
+    background-color: #325b42;
+}
