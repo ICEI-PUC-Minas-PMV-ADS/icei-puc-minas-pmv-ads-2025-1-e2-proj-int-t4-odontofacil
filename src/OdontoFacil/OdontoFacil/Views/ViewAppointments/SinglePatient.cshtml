@@ -1,0 +1,47 @@
+@model OdontoFacil.Models.Views.ViewAppointmentsViewModel
+@using OdontoFacil.Models.Data 
+
+@{
+    @*Layout aqui*@
+}
+<div>
+    <h3><strong>PACIENTE: @Model.PatientName (IDADE: @Model.Age)</strong></h3>
+
+    <h4>MEUS AGENDAMENTOS</h4>
+    @if (Model.Appointment != null && Model.Appointment.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Data</th>
+                    <th>Médico</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model.Appointment)
+                {
+                    <tr>
+                        <td>@appointment.Time.ToString("HH:mm")</td>
+                        <td>@appointment.Date.ToString("dd/MM/yyyy")</td>
+                        <td>@(appointment.Dentist?.User?.Name ?? "N/A")</td>
+                        <td>
+                            <form asp-controller="Patients" asp-action="Delete" method="post" asp-route-appointmentId="@appointment.Id" asp-route-patientIdForRedirect="@Model.PatientId" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja cancelar este agendamento?')">
+                                    Cancelar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Você não possui nenhum agendamento marcado.</p>
+    }
+</div>
+
+    

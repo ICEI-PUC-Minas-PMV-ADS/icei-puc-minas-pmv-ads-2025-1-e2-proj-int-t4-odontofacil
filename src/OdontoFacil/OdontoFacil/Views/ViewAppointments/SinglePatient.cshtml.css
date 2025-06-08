@@ -1,0 +1,22 @@
+ .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    h3 { 
+        padding-bottom: 20px;
+    }
+
+    h4 {
+        color: #3E7353;
+        border-bottom: 5px solid #3E7353;
+        padding-bottom: 20px;
+        margin-bottom: 3px;
+        display: inline-block; 
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }

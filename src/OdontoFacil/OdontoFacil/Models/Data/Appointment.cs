@@ -18,6 +18,9 @@ public partial class Appointment
 
     [Column(name: "data")]
     public DateOnly Date { get; set; }
+    
+    [Column(name: "hora")]
+    public TimeOnly Time { get; set; }
 
     [Column(name: "hora")]
     public TimeOnly Hour { get; set; }
