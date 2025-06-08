@@ -214,12 +214,12 @@ public class ExamResultController : Controller
         var viewModelList = examResults.Select(er => new ExamResultListViewModel
         {
             Id = er.Id,
-            PatientName = er.ExamRequest?.Patient.User.Name ?? "N/A",
-            PatientCPF = er.ExamRequest?.Patient.User.CPF ?? "N/A",
-            ExamTypeDescription = er.ExamRequest?.TypeNavigation.Description ?? "N/A",
-            RequestDate = er.ExamRequest?.RequestDate ?? DateOnly.MinValue,
+            PatientName = er.ExamRequest.Patient.User.Name,
+            PatientCPF = er.ExamRequest.Patient.User.CPF,
+            ExamTypeDescription = er.ExamRequest.TypeNavigation.Description,
+            RequestDate = er.ExamRequest.RequestDate,
             ResultDate = er.Date,
-            Lab = er.Lab ?? "N/A",
+            Lab = er.Lab,
             ResultFilePath = er.ResultFilePath
         }).ToList();
 
@@ -298,7 +298,9 @@ public class ExamResultController : Controller
     {
         var examRequests = await _context.ExamRequests
             .Include(er => er.TypeNavigation)
-            .Where(er => er.PatientId == patientId)
+            .Include(er => er.Result)
+            .Where(er => er.PatientId == patientId && er.Result == null)
+            
             .Select(er => new
             {
                 id = er.Id,

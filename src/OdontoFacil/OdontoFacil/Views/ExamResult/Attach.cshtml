@@ -85,6 +85,15 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
+     @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage)){
+        
+        <script>
+            const successMessage = @Html.Raw(Json.Serialize(ViewBag.SuccessMessage));
+            window.alert(successMessage);
+            location.replace("/ExamResult/AnexarResultado");
+        </script>
+    }
+
     <script>
         $(document).ready(function () {
             var patientSelect = $('#patientSelect');
