@@ -28,7 +28,7 @@ public partial class Patient
     [Column("sexo")]
     public string? Sex { get; set; } = null!;
 
-    public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+    public virtual ICollection<Appointment> Appointments { get; set; } = [];
 
     public virtual HealthPlan? HealthPlan { get; set; } = null!;
 
@@ -36,7 +36,7 @@ public partial class Patient
 
     public virtual User User { get; set; } = null!;
 
-    public virtual ICollection<ExamRequest> ExamRequests { get; set; } = new List<ExamRequest>();
+    public virtual ICollection<ExamRequest> ExamRequests { get; set; } = [];
 
-    public virtual ICollection<MedicalHistoryItem> MedicalHistory { get; set; } = new List<MedicalHistoryItem>();
+    public virtual ICollection<MedicalHistoryItem> MedicalHistory { get; set; } = [];
 }

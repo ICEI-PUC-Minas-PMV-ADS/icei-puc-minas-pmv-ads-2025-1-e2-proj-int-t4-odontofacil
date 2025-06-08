@@ -1,16 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-
+using System.ComponentModel.DataAnnotations; 
+using System; 
 namespace OdontoFacil.Models.Data;
 
-[Table("Pedido_Exame")]
+[Table("Pedido_Exame")] 
 public partial class ExamRequest
 {
     [Column("id")]
-    public string Id { get; set; } = null!;
+    public string Id { get; set; } = Guid.NewGuid().ToString(); 
 
     [Column("tipo")]
     [ForeignKey(nameof(TypeNavigation))]
-    public string Type { get; set; } = null!;
+    public string Type { get; set; } = null!; 
 
     [Column("id_paciente")]
     [ForeignKey(nameof(Patient))]
@@ -21,7 +22,7 @@ public partial class ExamRequest
     public string DentistId { get; set; } = null!;
 
     [Column("data_solicitacao")]
-    public DateOnly RequestDate { get; set; }
+    public DateOnly RequestDate { get; set; } 
 
     public virtual Dentist Dentist { get; set; } = null!;
 
@@ -29,5 +30,5 @@ public partial class ExamRequest
 
     public virtual ExamResult Result { get; set; } = null!;
 
-    public virtual ExamType TypeNavigation { get; set; } = null!;
+    public virtual ExamType TypeNavigation { get; set; } = null!; 
 }

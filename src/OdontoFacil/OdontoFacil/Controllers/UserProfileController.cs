@@ -9,15 +9,10 @@ using OdontoFacil.Models.Views;
 namespace OdontoFacil.Controllers;
 
 [Authorize(Roles = UserTypes.Patient)]
-public partial class UserProfileController : Controller
+public partial class UserProfileController(OdontoFacilDbContext context) : Controller
 {
 
-    private OdontoFacilDbContext _context;
-
-    public UserProfileController(OdontoFacilDbContext context)
-    {
-        _context = context;
-    }
+    private readonly OdontoFacilDbContext _context = context;
 
     [Route("/Perfil")]
     public IActionResult Index()
@@ -27,7 +22,7 @@ public partial class UserProfileController : Controller
                     .Include(user => user.Patient)
                     .FirstOrDefault(u => u.Id == userId);
 
-        if (user == null)
+        if (user == null || user.Patient == null)
         {
             return NotFound();
         }
@@ -38,7 +33,7 @@ public partial class UserProfileController : Controller
             Name = user.Name,
             CPF = user.CPF,
             Email = user.Email,
-            Phone = user.Patient.PhoneNumber,
+            
             DateOfBirth = user.Patient.DateOfBirth,
             Password = user.Password
         };

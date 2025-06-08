@@ -8,11 +8,11 @@ namespace OdontoFacil.Models.Views;
 public class PatientViewModel
     
 {
-    public Patient Patient { get; set; } 
-    public List<Note> Note { get; set; } 
-    public Dentist Dentist { get; set; }
-    public Appointment Appointment { get; set; }
-    public User User { get; set; }
+    public Patient? Patient { get; set; } 
+    public List<Note> Note { get; set; } = [];
+    public Dentist? Dentist { get; set; }
+    public Appointment? Appointment { get; set; }
+    public User? User { get; set; }
     public string? Id { get; set; } = null!;
 
     [Display(Name = "Nome completo")]
@@ -31,7 +31,7 @@ public class PatientViewModel
     public string? Appointments { get; set; } = null!;
 
     [Display(Name = "data")]
-    public DateOnly Date { get; set; }
+    public DateOnly? Date { get; set; }
 
     [Display(Name = "Anotação")]
     public string PatientNote { get; set; } = null!;
