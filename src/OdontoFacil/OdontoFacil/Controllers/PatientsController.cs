@@ -35,35 +35,6 @@ namespace OdontoFacil.Controllers
         
         [Route("Paciente/{id}")]
         [HttpGet]
-        public ActionResult Index(string id)
-        {
-            var patient = _context.Patients.Include(p => p.User).FirstOrDefault(p => p.Id == id);
-
-            if (patient == null)
-            {
-                return NotFound();
-            }
-
-            var notes = _context.Notes.Where(n => n.PatientId == id).ToList();
-            var appointment = _context.Appointments.FirstOrDefault(a => a.PatientId == id);
-            var user = patient.User;
-
-
-
-            var viewModel = new PatientViewModel
-            {
-                PatientId = patient.Id,
-                Patient = patient,
-                Name = patient.User.Name,
-                DateOfBirth = patient.DateOfBirth,
-                Age = CalculateAge(patient.DateOfBirth),
-                Note = notes,
-                Appointment = appointment,
-            };
-
-            return View(viewModel);
-        }
-
         
 
         [HttpGet]

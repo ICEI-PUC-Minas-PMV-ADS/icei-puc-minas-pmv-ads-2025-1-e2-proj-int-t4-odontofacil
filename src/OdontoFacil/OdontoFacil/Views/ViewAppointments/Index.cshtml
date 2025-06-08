@@ -1,0 +1,84 @@
+@model IEnumerable<OdontoFacil.Models.Views.ViewAppointmentsViewModel>
+@using OdontoFacil.Models.Data 
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "TODOS OS AGENDAMENTOS";
+    string currentDentistId = null;
+    if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("dentista")) 
+    {
+        currentDentistId = User.FindFirstValue("UserId"); 
+    }
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div>
+    <h3>@ViewData["Title"]</h3>
+
+    <div class="actions-container">
+        <form asp-controller="ViewAppointments" asp-action="Index" method="get" class="search-form">
+            <div class="search-container">
+                <input type="text" name="searchString" class="form-control" placeholder="Procurar por paciente..." value="@ViewBag.CurrentFilter" />
+                <button type="submit" class="search-button">
+                    Procurar</button>
+            </div>
+        </form>
+
+        @if (!string.IsNullOrEmpty(currentDentistId))
+        {
+            <form asp-controller="ViewAppointments" asp-action="SingleDentist" asp-route-id="@currentDentistId" method="get" class="patients-form">
+                <button type="submit" class="button-patients">Meus Pacientes</button>
+            </form>
+        }
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-controller="ViewAppointments" asp-action="Index" asp-route-sortOrder="@ViewData["HourSortParam"]">Horário @Html.Raw(ViewData["HourSortIcon"])</a>
+                    </th>
+                    <th>
+                        <a asp-controller="ViewAppointments" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParam"]">Data @Html.Raw(ViewData["DateSortIcon"])</a>
+                    </th>
+                    <th>Paciente</th>
+                    <th>Idade</th>
+                    <th>Médico</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@(appointment.Hour.ToString("HH:mm"))</td>
+                        <td>@(appointment.Date.ToString("dd/MM/yyyy"))</td>
+                        <td>@appointment.PatientName</td>
+                        <td>@appointment.Age</td>
+                        <td>@appointment.DentistName</td>
+                        <td>
+                            <form asp-controller="ViewAppointments" asp-action="Delete" method="post" asp-route-appointmentId="@appointment.AppointmentId" style="display:inline;">
+                                @Html.AntiForgeryToken() 
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja cancelar este agendamento?')">
+                                    Cancelar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Nenhum agendamento encontrado no sistema.</p>
+    }
+</div>

@@ -104,7 +104,8 @@ public class AppointmentController : Controller
             };
             _dbContext.Appointments.Add(appointment);
             await _dbContext.SaveChangesAsync();
-            return Redirect("/Agendamentos");
+            return RedirectToAction("SinglePatient", "ViewAppointments", new { id = appointment.PatientId });
+
         }
 
         return View(formData);
