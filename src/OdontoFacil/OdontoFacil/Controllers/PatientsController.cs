@@ -212,7 +212,7 @@ namespace OdontoFacil.Controllers
             return true;
         }
 
-        private int CalculateAge(DateOnly? dateOfBirth)
+        private static int CalculateAge(DateOnly? dateOfBirth)
         {
             if (!dateOfBirth.HasValue)
                 return 0;

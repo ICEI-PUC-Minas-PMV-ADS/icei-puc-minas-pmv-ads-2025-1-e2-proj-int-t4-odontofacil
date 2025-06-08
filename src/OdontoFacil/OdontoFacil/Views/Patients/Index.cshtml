@@ -37,9 +37,7 @@
         </thead>
         <tbody> 
             <tr>
-                <td>
-                    @(Model.Appointment?.AppointmentDateTime?.ToString("HH:mm") ?? "N/A")
-                </td>
+             
                 <td>
                     @* Exibe a data do agendamento, se houver *@
                     @(Model.Date?.ToString("dd/MM/yyyy") ?? "N/A")
