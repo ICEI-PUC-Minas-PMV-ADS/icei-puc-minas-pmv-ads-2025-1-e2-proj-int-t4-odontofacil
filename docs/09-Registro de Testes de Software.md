@@ -1,28 +1,111 @@
 # Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
+---
 
-Para cada caso de teste definido no Plano de Testes de Software, realize o registro das evidências dos testes feitos na aplicação pela equipe, que comprovem que o critério de êxito foi alcançado (ou não!!!). Para isso, utilize uma ferramenta de captura de tela que mostre cada um dos casos de teste definidos (obs.: cada caso de teste deverá possuir um vídeo do tipo _screencast_ para caracterizar uma evidência do referido caso).
+## Caso de Teste CT01 – Cadastrar perfil
 
-| **Caso de Teste** 	| **CT01 – Cadastrar perfil** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-|Registro de evidência | www.teste.com.br/drive/ct-01 |
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT01 – Cadastrar perfil |
+| Requisito Associado | RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/3ba135ba-6efe-4388-9324-9527be63ac42" alt="ct01"/> <br> <img src="https://github.com/user-attachments/assets/0eeccfb2-1a9e-47f4-8f06-128d6b50ea65" alt="ct001"> |
 
-| **Caso de Teste** 	| **CT02 – Realizar login** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
-|Registro de evidência | www.teste.com.br/drive/ct-02 |
+---
 
-## Relatório de testes de software
+## Caso de Teste CT02 – Realizar login
 
-Apresente e discuta detalhadamente os resultados obtidos nos testes realizados, destacando tanto os pontos fortes quanto as fragilidades identificadas na solução. Explique como os aspectos positivos contribuem para o desempenho e a usabilidade do sistema, e como os pontos fracos impactam sua eficácia.
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT02 – Realizar login |
+| Requisito Associado | RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/d10d282a-303f-4ceb-a7b8-0e6b0f5e6048" alt="ct02"/> <br> <img src="https://github.com/user-attachments/assets/2585a531-136d-4daf-af36-8f3972f000ae" alt="ct002"> |
 
-Descreva as principais falhas detectadas durante os testes, fornecendo exemplos concretos e evidências que sustentem essas observações. Explicite os impactos dessas falhas na experiência do usuário, na funcionalidade do sistema e nos objetivos do projeto.
+---
 
-Com base nessas análises, detalhe as estratégias que o grupo pretende adotar para corrigir as deficiências e aprimorar a solução nas próximas iterações. Inclua ações específicas, como ajustes no código, modificações na interface, otimizações de desempenho ou melhorias na acessibilidade e usabilidade.
+## Caso de Teste CT03 – Paciente faz agendamento de consultas
 
-Por fim, apresente e/ou proponha as melhorias a partir dos testes realizados, destacando os ganhos obtidos e como essas alterações contribuem para a evolução do projeto.
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT03 – Paciente faz agendamento de consultas |
+| Requisito Associado | RF-003 - O sistema deve permitir o paciente agendar e cancelar consultas pelo sistema. |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/c1fff23c-e781-471f-8b30-afe6fe03df56" alt="ct03"/> <br> <img src="https://github.com/user-attachments/assets/f0c1f06e-79a2-4c7a-b14f-274fe2a344ba" alt="ct003"> |
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+---
+
+## Caso de Teste CT04 – Operador faz agendamento de consultas para paciente
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT04 – Operador faz agendamento de consultas para paciente |
+| Requisito Associado | RF-004 - O sistema deve permitir o operador agendar consultas para pacientes. |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/8ad6d8ed-20ae-435d-beaa-fa02ecde341f" alt="ct04"/> <br> <img src="https://github.com/user-attachments/assets/089f8a67-73ea-4646-ba78-4cd90656135e" alt="ct004"> |
+
+---
+
+## Caso de Teste CT05 – Dentista faz alterações na agenda de consultas
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT05 – Dentista faz alterações na agenda de consultas |
+| Requisito Associado | RF-005 - O sistema deve permitir que o dentista visualizar e gerenciar sua agenda de consultas. |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/b77cae5b-6167-44ed-9472-ef251e115f7f" alt="ct05"/> <br> <img src="https://github.com/user-attachments/assets/9b2b40cc-de00-4052-a7f6-db4c8bef9367" alt="ct005"> <br> <img src="https://github.com/user-attachments/assets/40592fdb-bebe-495d-9071-bdaf6af55655" alt="ct0005"/> |
+
+---
+
+## Caso de Teste CT06 – Permissão total aos dentistas a um CRUD dos prontuários dos pacientes
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT06 – Permissão total aos dentistas a um CRUD dos prontuários dos pacientes |
+| Requisito Associado | RF-006 - O sistema deve permitir que o dentista adicione, edite e remova informações do prontuário dos pacientes. |
+| Registro de evidência | |
+
+---
+
+## Caso de Teste CT07 – Dentista precisa documentar o andamento do tratamento por meio de anotações a cada consulta
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT07 – Dentista precisa documentar o andamento do tratamento por meio de anotações a cada consulta |
+| Requisito Associado | RF-007 - O sistema deve permitir que o dentista possa adicionar anotações sobre o tratamento do paciente a cada consulta. |
+| Registro de evidência | |
+
+---
+
+## Caso de Teste CT08 – Dentista precisa conseguir anexar resultados de exames prescrições ao prontuário do paciente
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT08 – Dentista precisa conseguir anexar resultados de exames prescrições ao prontuário do paciente |
+| Requisito Associado | RF-008 - O sistema deve permitir que o dentista anexe resultados e prescrições ao prontuário do paciente. |
+| Registro de evidência | |
+
+---
+
+## Caso de Teste CT09 – Paciente precisa enviar e visualizar exames no sistema
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT09 – Paciente precisa enviar e visualizar exames no sistema |
+| Requisito Associado | RF-009 - O sistema deve permitir que paciente possa enviar e visualizar exames dentro do sistema. |
+| Registro de evidência | <img src="https://github.com/user-attachments/assets/694ed756-9362-49c9-b59a-8fe4ba9324bb" alt="ct09"/> <br> <img src="https://github.com/user-attachments/assets/3fadc4bb-6d0a-4fcb-a90c-d1e1e53a8d82" alt="ct009"> |
+
+---
+
+## Caso de Teste CT10 – Paciente precisa acessar histórico de exames e consultas
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT10 – Paciente precisa acessar histórico de exames e consultas |
+| Requisito Associado | RF-010 - O sistema deve permitir que o paciente visualize seu histórico de exames e consultas. |
+| Registro de evidência | |
+
+---
+
+## Caso de Teste CT11 – Sistema deve apresentar organização cronológica do histórico de exames e consultas
+
+| Campo | Conteúdo |
+|:---:|:---:|
+| **Caso de Teste** | CT11 – Sistema deve apresentar organização cronológica do histórico de exames e consultas |
+| Requisito Associado | RF-011 - O sistema deve organizar de forma cronológica todos os atendimentos, exames e procedimentos do paciente. |
+| Registro de evidência | |
