@@ -18,7 +18,7 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 | Requisito Associado     | RF-001 - O sistema deve permitir o cadastro de pacientes, dentistas e operadores.                                                                                                                                            |
 | Pré-condições           | Estar na tela de cadastro                                                                                                                                                                                                    |
 | Passos                  | * Preencher campos obrigatórios: Nome, email, cpf e senha <br> * Marcar caixa "Aceitar os termos de uso" <br> * Clicar em "Cadastrar"                                                                                |
-| Dados de entrada        | * Nome: Paulo Ferreira Marques, email: pauloferreiram@gmail.com, cpf: 000.000.000-11 (cpf inválido) <br> * Senha: 495857@Aa                                                                                                 |
+| Dados de entrada        | Nome: Paulo Ferreira Marques, email: pauloferreiram@gmail.com, cpf: 000.000.000-11 <br> Senha: 495857@Aa                                                                                                 |
 | Resultado esperado (RE) | Acessar tela de login                                                                                                                                                                                                        |
 | Resultado obtido (RO)   | Acesso a tela de login                                                                                                                                                                                                       |
 | Avaliação (pegou / não pegou erro) | Não pegou erro                                                                                                                                                                                                       |
@@ -38,7 +38,7 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 | Resultado esperado (RE) | Login e acesso a lista de pacientes                                                                                |
 | Resultado obtido (RO)   | Login funcionou e tela de lista de pacientes foi exibida                                                           |
 | Avaliação (pegou / não pegou erro) | Não pegou erro                                                                                              |
-| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/d10d282a-303f-4ceb-a7b8-0e6b0f5e6048" alt="ct02"/> <br> <img src="https://github.com/user-attachments/assets/2585a531-136d-4daf-af36-8f3972f000ae" alt="ct002"> |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/ae56b889-a09c-4d6d-9d5f-94f0772d85c5" alt="ct02"/> <br> <img src="https://github.com/user-attachments/assets/2585a531-136d-4daf-af36-8f3972f000ae" alt="ct002"> |
 
 ---
 
@@ -96,13 +96,13 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 |:------------------------|:-------------------------------------------------------------------------------------------------------------------|
 | **Caso de Teste** | CT06 – Permissão total aos dentistas a um CRUD dos prontuários dos pacientes                                      |
 | Requisito Associado     | RF-006 - O sistema deve permitir que o dentista adicione, edite e remova informações do prontuário dos pacientes. |
-| Pré-condições           | * Acesso à conta do dentista Ademir Roque <br> * Atendimento realizado para o paciente Junior Silva em algum dia que anteceda o teste, pelo dentista Flávio Brasil |
-| Passos                  | * Dentista selecionará o paciente Junior Silva <br> * Dentista selecionará a exibição o atendimento realizado pelo dentista Flávio Brasil <br> * Dentista selecionará a opção “Editar” |
+| Pré-condições           | * Acesso à conta de perfil dentista <br> * Acesso à lista de pacientes <br> * Acesso ao prontuário do paciente Junior Silva |
+| Passos                  | * Alterar plano de saúde do paciente de : "HapVida" para : "Unimed" <br> * Clicar em "Salvar" |
 | Dados de entrada        | * Paciente: Junior Silva                                                                                           |
-| Resultado esperado (RE) | Mensagem de erro do sistema alertando que não é possível fazer alterações de prontuário de outro dentista.        |
-| Resultado obtido (RO)   |                                                                                                                    |
-| Avaliação (pegou / não pegou erro) |                                                                                                                    |
-| Evidência (print screen) |                                                                                                                    |
+| Resultado esperado (RE) | Recarregamento da página e informação atualizada        |
+| Resultado obtido (RO)   | Página recarregada armazenando informação alterada                                                                                                                   |
+| Avaliação (pegou / não pegou erro) |  Não pegou erro.                                                                                                                  |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/1ab85536-8236-4cd6-8c37-970bd4e78709" alt="ct06"/> <br> <img src="https://github.com/user-attachments/assets/7cd95827-03a1-49fe-b960-1f0c0e6b7702" alt="ct006"> <br> <img src="https://github.com/user-attachments/assets/28796368-886f-4ccd-8e80-c3191074ac03" alt="ct0006"/>|
 
 ---
 
@@ -122,7 +122,7 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 
 ---
 
-## Caso de Teste CT08 – Operador faz agendamento de consultas para paciente
+## Caso de Teste CT08 – Dentista precisa conseguir anexar resultados de exames prescrições ao prontuário do paciente
 
 | Campo | Conteúdo |
 |:------------------------|:-------------------------------------------------------------------------------------------------------------------|
