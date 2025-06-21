@@ -4,7 +4,8 @@ O sistema vai utilizar um layout limpo, focado na usabilidade. Neste documento, 
 
 ## Identidade Visual
 
-Paleta de cores : Cores em diferentes tons de verde remetendo saúde, tranquilidade e limpeza.
+Paleta de cores : Cores em diferentes tons de verde remetendo saúde, tranquilidade e limpeza. <br> 
+Código dos tons de verde: <br> #9bbda4: Um tom de verde-acinzentado claro, <br> #3E7353: Um verde-escuro profundo, <br> #325b42: Um verde-escuro mais sóbrio e fechado, <br> #5fad7e: Um verde médio vibrante, <br>  #D1F0D6: Um verde muito claro. <br>
 Tipografia : Sem serifa, bem legível.
 Iconografia : Ícones discretos e funcionais, integrados ao cabeçalho.
 
@@ -16,11 +17,11 @@ Botões de navegação : Com alto contraste e destaque para as páginas principa
 
 ## Exemplo de tela : Perfil Paciente 
 
-<img src="https://github.com/user-attachments/assets/51a018d9-36b3-4b2a-88c3-7e215be7db8f" alt="Perfil Paciente"/>
+<img src="https://github.com/user-attachments/assets/92fd3881-f761-423a-ade5-4d51ec6d6536" alt="Perfil Paciente"/>
 
 ## Exemplo de tela : Perfil Dentista 
 
-<img src="https://github.com/user-attachments/assets/78b12f14-4f33-4d64-8272-1e3fcf947a28" alt="Perfil Dentista"/>
+<img src="https://github.com/user-attachments/assets/754d9231-9dfb-40cb-bfd2-c787f8142635" alt="Perfil Dentista"/>
 
 
 
