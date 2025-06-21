@@ -14,14 +14,14 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 
 | Campo | Conteúdo |
 |:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Caso de Teste** | CT01 – Cadastro de usuário                                                                                                                                                                                                    |
-| Requisito Associado     | RF-001 - O sistema deve permitir o cadastro de pacientes, dentistas e operadores.                                                                                                                                            |
-| Pré-condições           | Estar na tela de cadastro                                                                                                                                                                                                    |
-| Passos                  | * Preencher campos obrigatórios: Nome, email, cpf e senha <br> * Marcar caixa "Aceitar os termos de uso" <br> * Clicar em "Cadastrar"                                                                                |
-| Dados de entrada        | Nome: Paulo Ferreira Marques, email: pauloferreiram@gmail.com, cpf: 000.000.000-11 <br> Senha: 495857@Aa                                                                                                 |
-| Resultado esperado (RE) | Acessar tela de login                                                                                                                                                                                                        |
-| Resultado obtido (RO)   | Acesso a tela de login                                                                                                                                                                                                       |
-| Avaliação (pegou / não pegou erro) | Não pegou erro                                                                                                                                                                                                       |
+| **Caso de Teste** | CT01 – Cadastro de usuário |
+| Requisito Associado | RF-001 - O sistema deve permitir o cadastro de pacientes, dentistas e operadores. |
+| Pré-condições | Estar na tela de cadastro |
+| Passos | * Preencher campos obrigatórios: Nome, email, cpf e senha <br> * Marcar caixa "Aceitar os termos de uso" <br> * Clicar em "Cadastrar" |
+| Dados de entrada | Nome: Paulo Ferreira Marques, email: pauloferreiram@gmail.com, cpf: 000.000.000-11 <br> Senha: 495857@Aa |
+| Resultado esperado (RE) | Acessar tela de login |
+| Resultado obtido (RO) | Acesso a tela de login |
+| Avaliação (pegou / não pegou erro) | Não pegou erro |
 | Evidência (print screen) | <img src="https://github.com/user-attachments/assets/3ba135ba-6efe-4388-9324-9527be63ac42" alt="ct01"/> <br> <img src="https://github.com/user-attachments/assets/0eeccfb2-1a9e-47f4-8f06-128d6b50ea65" alt="ct001"> |
 
 ---
@@ -114,11 +114,11 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 | Requisito Associado     | RF-007 - O sistema deve permitir que o dentista possa adicionar anotações sobre o tratamento do paciente a cada consulta. |
 | Pré-condições           | * Estar na tela de anotações dos atendimentos <br> * Selecionar paciente Junior Silva <br> * Selecionar data do atendimento (a depender da data do teste) |
 | Passos                  | * Dentista preencherá os campos que detalham o atendimento, ex: “houve complicações?” “há necessidade de marcar retorno para continuidade?” e etc. <br> * Dentista selecionará a opção “Salvar” <br> * Preencher campos de login e senha para validar anotações |
-| Dados de entrada        | * Login: ademiroqueodon@gmail.com <br> * Senha: 2984576QQ@ (senha correta 2984576Qq@)                            |
-| Resultado esperado (RE) | Mensagem de erro do sistema avisando que login ou senha estão incorretos.                                       |
-| Resultado obtido (RO)   |                                                                                                                    |
+| Dados de entrada        | * Login: pauloferreiram@gmail.com  <br> * Senha: 495857@Aa |
+| Resultado esperado (RE) | Alteração realizada com sucesso. |
+| Resultado obtido (RO)   | Alteração realizada com sucesso. |
 | Avaliação (pegou / não pegou erro) |                                                                                                                    |
-| Evidência (print screen) |                                                                                                                    |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/0d17db9b-5705-4ebb-b986-f0b675f9225c" alt="ct07"/> <br> <img src="https://github.com/user-attachments/assets/e8401509-4ceb-4c4b-9fc9-56ba604b2d1a" alt="ct007"/> |
 
 ---
 
@@ -130,11 +130,11 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 | Requisito Associado     | RF-008 - O sistema deve permitir que o dentista anexe resultados e prescrições ao prontuário do paciente.         |
 | Pré-condições           | * Estar na tela de listagem de pacientes <br> * Fazer um agendamento para o paciente para o mesmo dia que será selecionado no teste |
 | Passos                  | * Operador selecionará o paciente Junior Silva <br> * Operador selecionará a data, horário e tipo de atendimento <br> * É selecionada a opção “Agendar” |
-| Dados de entrada        | * Paciente: Junior Silva <br> * Data/Horário: 06/10/2025 - 08:00 <br> * Tipo de atendimento: Manutenção            |
-| Resultado esperado (RE) | Mensagem de erro do sistema alertando que já existe um agendamento para o dia selecionado.                        |
-| Resultado obtido (RO)   |                                                                                                                    |
-| Avaliação (pegou / não pegou erro) |                                                                                                                    |
-| Evidência (print screen) |                                                                                                                    |
+| Dados de entrada        | * Login: pauloferreiram@gmail.com  <br> * Senha: 495857@Aa |
+| Resultado esperado (RE) | Resultado de exame listado. |
+| Resultado obtido (RO)   | Resultado de exame listado. |
+| Avaliação (pegou / não pegou erro) | Não pegou erro. |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/ae56b889-a09c-4d6d-9d5f-94f0772d85c5" alt="ct08"/> <br> <img src="https://github.com/user-attachments/assets/5512b5db-6f26-4317-b32a-7c4e63acec3e" alt="ct008"/> |
 
 ---
 
@@ -162,11 +162,11 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 | Requisito Associado     | RF-010 - O sistema deve permitir que o paciente visualize seu histórico de exames e consultas.                    |
 | Pré-condições           | * Acesso a conta de paciente <br> * Selecionar opção “Meu histórico”                                            |
 | Passos                  | * Selecionar primeira data do histórico de atendimento <br> * Selecionar opção “Anotações” <br> * Visualizar informações |
-| Dados de entrada        | * Login: juniorsilvabhz@gmail.com <br> * Senha: 495857@Aa                                                       |
-| Resultado esperado (RE) | Exibição das anotações feitas pelo dentista.                                                                      |
-| Resultado obtido (RO)   |                                                                                                                    |
-| Avaliação (pegou / não pegou erro) |                                                                                                                    |
-| Evidência (print screen) |                                                                                                                    |
+| Dados de entrada        | * Login: juniorsilvabhz@gmail.com <br> * Senha: 495857@Aa |
+| Resultado esperado (RE) | Exibição do histórico de consultas. |
+| Resultado obtido (RO)   | Exibição do histórico de consultas. |
+| Avaliação (pegou / não pegou erro) | Não pegou erro. |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/dc04fc33-f8dd-4773-887c-128b7b6b96d7" alt="ct010"/> |
 
 ---
 
@@ -174,12 +174,12 @@ O projeto de teste visa garantir que o sistema atenda aos requisitos funcionais,
 
 | Campo | Conteúdo |
 |:------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| **Caso de Teste** | CT11 – Sistema deve apresentar organização cronológica do histórico de exames e consultas                         |
-| Requisito Associado     | RF-011 - O sistema deve organizar de forma cronológica todos os atendimentos, exames e procedimentos do paciente.  |
-| Pré-condições           | * Acesso a conta de paciente <br> * Selecionar opção “Meu histórico”                                            |
-| Passos                  | * Verificar se a listagem está organizada cronologicamente com filtros de exames e de consultas                   |
-| Dados de entrada        | * Data do dia (a depender da data da realização do teste).                                                       |
-| Resultado esperado (RE) | Mensagem de erro do sistema avisando que é necessário realizar alterações com 24 horas de antecedência.         |
-| Resultado obtido (RO)   |                                                                                                                    |
-| Avaliação (pegou / não pegou erro) |                                                                                                                    |
-| Evidência (print screen) |
+| **Caso de Teste** | CT11 – Sistema deve apresentar organização cronológica do histórico de exames e consultas |
+| Requisito Associado     | RF-011 - O sistema deve organizar de forma cronológica todos os atendimentos, exames e procedimentos do paciente. |
+| Pré-condições           | * Acesso a conta perfil operador <br> * Selecionar opção “Agendamentos” |
+| Passos                  | * Verificar se a listagem está organizada cronologicamente. |
+| Dados de entrada        | * Login: pauloferreiram@gmail.com <br> * Senha: 495857@Aa. |
+| Resultado esperado (RE) | Exibição organizada das consultas. |
+| Resultado obtido (RO)   | Exibição organizada das consultas. |
+| Avaliação (pegou / não pegou erro) | Não pegou erro. |
+| Evidência (print screen) | <img src="https://github.com/user-attachments/assets/430470f0-ea5e-46f3-bb7f-2afa9267a47a" alt="ct011"/> |
