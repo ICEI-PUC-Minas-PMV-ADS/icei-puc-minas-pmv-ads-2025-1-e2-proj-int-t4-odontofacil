@@ -1,29 +1,25 @@
-message: Please cite this software using these metadata.
-title:
+message: Sistema de agendamentos e prontuário online odontológico
+title: OdontoFácil
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: de Almeida Lira
+    given-names: Cibele
+  - family-names: Flavio Silva Oliveira
+    given-names: Heitor
+  - family-names: Firmino Coelho
+    given-names: Jean Karlo
+  - family-names: Mamédio Vieira
+    given-names: Lucas
+  - family-names: Ferreira Rodrigues
+    given-names: Rodrigo
+  - family-names: Marques de Souza
+    given-names: Sérgio Arthur
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Marques Pietrobon
+    given-names: Carlos Alberto
 keywords:
-  - 
-  - 
+  -OdontoFácil 
+  -Projeto 
 repository-code: 
 version: 1.0.0
 date-released: 2023-10-31
